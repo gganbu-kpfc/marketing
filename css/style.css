@@ -719,3 +719,227 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+/* ===== 강한 섹션 대비 업그레이드 ===== */
+
+/* page hero 더 강하게 */
+.page-hero {
+  padding: 110px 0 80px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(20,184,166,0.10), transparent 22%),
+    radial-gradient(circle at 10% 0%, rgba(31,111,255,0.12), transparent 26%),
+    linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  border-bottom: 1px solid rgba(31,111,255,0.08);
+}
+
+/* 일반 섹션 */
+.section {
+  position: relative;
+}
+
+/* 번갈아 배경 톤 차이 강하게 */
+.section-soft {
+  background:
+    linear-gradient(180deg, #f3f7fc 0%, #eef4fb 100%);
+}
+
+/* 특정 강조 섹션용 */
+.highlight-band {
+  padding: 84px 0;
+  background:
+    linear-gradient(135deg, #0c1d3a 0%, #1f6fff 70%, #14b8a6 100%);
+  color: white;
+}
+
+.highlight-band h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  margin-bottom: 14px;
+}
+
+.highlight-band p {
+  color: rgba(255,255,255,0.86);
+  font-size: 17px;
+  max-width: 780px;
+}
+
+.highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  backdrop-filter: blur(8px);
+}
+
+/* 카드 더 또렷하게 */
+.info-card,
+.feature-item,
+.portfolio-before,
+.portfolio-after,
+.contact-form,
+.contact-box,
+.strength-row,
+.activity-card,
+.team-card {
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(31,111,255,0.08);
+  box-shadow: 0 14px 34px rgba(12,29,58,0.06);
+}
+
+/* 카드 상단 컬러 포인트 */
+.info-card:nth-child(1),
+.feature-item:nth-child(1) {
+  border-top: 4px solid #1f6fff;
+}
+
+.info-card:nth-child(2),
+.feature-item:nth-child(2) {
+  border-top: 4px solid #14b8a6;
+}
+
+.info-card:nth-child(3),
+.feature-item:nth-child(3) {
+  border-top: 4px solid #f59e0b;
+}
+
+/* 서비스 섹션 이미지 박스 더 고급스럽게 */
+.about-image,
+.service-visual,
+.activity-thumb,
+.team-photo {
+  background:
+    radial-gradient(circle at top right, rgba(31,111,255,0.10), transparent 26%),
+    linear-gradient(135deg, #dbeafe 0%, #eef6ff 100%);
+  border: 1px solid rgba(31,111,255,0.08);
+}
+
+/* 큰 섹션 제목 아래 라인 포인트 */
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1f6fff, #14b8a6);
+}
+
+/* 중앙 정렬 섹션도 예쁘게 */
+.section-head.center h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 문장 가독성 강화 */
+p,
+li {
+  color: #344054;
+  line-height: 1.75;
+}
+
+/* CTA 확실하게 */
+.cta-box {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,255,255,0.12), transparent 26%),
+    linear-gradient(135deg, #0c1d3a 0%, #1f6fff 65%, #14b8a6 100%);
+}
+
+.cta-box .section-label {
+  background: white;
+  color: #0c1d3a;
+  box-shadow: none;
+}
+
+.cta-box .btn-outline {
+  background: white;
+  color: #0c1d3a;
+  border-color: white;
+}
+
+/* 서비스 태그도 더 또렷하게 */
+.service-tags span {
+  background: white;
+  border: 1px solid rgba(31,111,255,0.12);
+  color: #1f6fff;
+  box-shadow: 0 6px 16px rgba(12,29,58,0.04);
+}
+
+/* portfolio before/after 차이 더 명확하게 */
+.portfolio-before {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.portfolio-after {
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+  border: 2px solid rgba(31,111,255,0.18);
+}
+
+/* 오른쪽 고정 문의 버튼 */
+.floating-contact {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-contact a {
+  min-width: 120px;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 14px;
+  color: white;
+  box-shadow: 0 12px 24px rgba(12,29,58,0.18);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.floating-contact a:hover {
+  transform: translateX(-4px);
+  filter: brightness(1.03);
+}
+
+.floating-contact .call-btn {
+  background: linear-gradient(135deg, #1f6fff, #1457d6);
+}
+
+.floating-contact .kakao-btn {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #0c1d3a;
+}
+
+.floating-contact .chat-btn {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
+/* 모바일에서는 아래쪽으로 */
+@media (max-width: 768px) {
+  .floating-contact {
+    right: 14px;
+    left: 14px;
+    top: auto;
+    bottom: 14px;
+    transform: none;
+    flex-direction: row;
+  }
+
+  .floating-contact a {
+    min-width: 0;
+    flex: 1;
+    font-size: 13px;
+    min-height: 46px;
+    padding: 0 10px;
+  }
+}
