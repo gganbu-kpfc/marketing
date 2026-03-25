@@ -1325,4 +1325,178 @@
         <div class="section-head" style="margin-top: 42px; margin-bottom: 22px;">
           <div>
             <div class="eyebrow">주요 거래 형태</div>
-            <h
+            <h2 class="section-title">이런 곳에서 바로 연결됩니다</h2>
+            <p class="section-desc">실제 로고로 교체하면 더 좋습니다. 지금은 구조용 박스만 넣어뒀습니다.</p>
+          </div>
+        </div>
+
+        <div class="logo-grid">
+          <div class="logo-item">마케팅 대행사<br />외주 파트너</div>
+          <div class="logo-item">지역 소상공인<br />플레이스 운영</div>
+          <div class="logo-item">중소기업<br />스토어 반응 관리</div>
+          <div class="logo-item">개인 브랜드<br />셀프 마케팅</div>
+          <div class="logo-item">광고주 직접 의뢰<br />리뷰·트래픽 실행</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">포트폴리오</div>
+            <h2 class="section-title">사이트는 예쁘게 만드는 것보다<br />이 장면이 보여야 합니다</h2>
+            <p class="section-desc">숫자를 과장하지 말고, 어떤 업종에 어떤 작업을 했고 무엇이 달라졌는지 장면으로 보여주는 방식이 더 신뢰를 줍니다.</p>
+          </div>
+        </div>
+
+        <div class="case-grid">
+          <article class="card case-card">
+            <div class="case-thumb">
+              <img src="./assets/case-place.jpg" alt="플레이스 운영 사례" />
+              <div class="fallback">네이버 플레이스 사례</div>
+            </div>
+            <div class="case-body">
+              <div class="case-badge">플레이스 운영</div>
+              <h3>지역 매장 검색 노출과 리뷰 흐름 보강</h3>
+              <p>지도에서 보이기만 하는 상태가 아니라 클릭과 신뢰가 붙도록 트래픽과 리뷰 흐름을 같이 정리한 사례입니다.</p>
+              <ul>
+                <li>업종: 로컬 매장</li>
+                <li>작업: 플레이스 트래픽 + 리뷰 흐름</li>
+                <li>포인트: 검색 노출, 클릭, 저장 흐름 보강</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card case-card">
+            <div class="case-thumb">
+              <img src="./assets/case-store.jpg" alt="쇼핑 스토어 사례" />
+              <div class="fallback">쇼핑 스토어 사례</div>
+            </div>
+            <div class="case-body">
+              <div class="case-badge">스토어 반응</div>
+              <h3>찜과 관심 신호가 약한 상품 흐름 보강</h3>
+              <p>상품은 괜찮은데 반응이 약해 묻히는 스토어에 필요한 시작 신호를 만들어주는 방향으로 구성했습니다.</p>
+              <ul>
+                <li>업종: 스마트스토어</li>
+                <li>작업: 유입 보조 + 찜 흐름</li>
+                <li>포인트: 상품 반응의 시작점 확보</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card case-card">
+            <div class="case-thumb">
+              <img src="./assets/case-self.jpg" alt="셀프 마케팅 사례" />
+              <div class="fallback">셀프 마케팅 사례</div>
+            </div>
+            <div class="case-body">
+              <div class="case-badge">셀프 운영</div>
+              <h3>대표가 직접 반응 숫자를 조절하는 도구형 서비스</h3>
+              <p>콘텐츠가 묻히는 상황에서 필요한 반응만 선택해서 직접 운영할 수 있게 구성한 셀프 방식입니다.</p>
+              <ul>
+                <li>채널: 인스타그램 / 유튜브 / 스토어</li>
+                <li>작업: 좋아요, 조회, 팔로워, 찜</li>
+                <li>포인트: 대표가 필요한 만큼 직접 선택</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <p class="small-note">사례 이미지는 실제 작업 캡처로 교체해 주세요. 지금은 구조를 잡기 위한 자리입니다.</p>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">진행 방식</div>
+            <h2 class="section-title">복잡하게 말 안 합니다<br />진행은 이 4단계면 충분합니다</h2>
+            <p class="section-desc">대행사든 광고주든 결국 궁금한 건 같습니다. 어떻게 맡기고, 어느 정도 확인하고, 언제 시작되는지. 그래서 흐름을 단순하게 보여주는 게 좋습니다.</p>
+          </div>
+        </div>
+
+        <div class="process-grid">
+          <article class="card process-card">
+            <div class="step-label">STEP 01</div>
+            <h3>상담 접수</h3>
+            <p>업종, 채널, 현재 막힌 지점을 먼저 받습니다. 대행사라면 클라이언트 상황까지 같이 확인합니다.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-label">STEP 02</div>
+            <h3>작업 방향 확인</h3>
+            <p>플레이스인지, 스토어인지, 셀프 마케팅인지 가장 먼저 필요한 작업 방향을 정리합니다.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-label">STEP 03</div>
+            <h3>실행 항목 제안</h3>
+            <p>과하게 묶지 않고 필요한 것만 제안합니다. 예산보다 현재 상황에 맞는 조합이 먼저입니다.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-label">STEP 04</div>
+            <h3>작업 시작</h3>
+            <p>확정된 범위 안에서 바로 작업을 시작합니다. 반복적으로 설명만 많은 구조를 피합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">자주 묻는 질문</div>
+            <h2 class="section-title">문의 전에 걸리는 반감은<br />여기서 먼저 빼주는 게 좋습니다</h2>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <article class="card faq-item">
+            <details open>
+              <summary><span>대행사도 외주 파트너처럼 맡길 수 있나요?</span><span class="plus">+</span></summary>
+              <div class="answer">가능합니다. 실제로 대행사에서 클라이언트 작업을 바로 맡길 수 있게 외주 파트너 구조로 맞춰서 움직일 수 있습니다.</div>
+            </details>
+          </article>
+          <article class="card faq-item">
+            <details>
+              <summary><span>플레이스만 따로 맡길 수도 있나요?</span><span class="plus">+</span></summary>
+              <div class="answer">가능합니다. 처음부터 모든 서비스를 묶지 않고, 필요한 항목만 선택해서 진행하는 구조로 잡을 수 있습니다.</div>
+            </details>
+          </article>
+          <article class="card faq-item">
+            <details>
+              <summary><span>셀프 마케팅은 어떤 채널이 가능한가요?</span><span class="plus">+</span></summary>
+              <div class="answer">인스타그램, 유튜브, 스토어 계열처럼 초기 반응이 중요한 채널 중심으로 운영 가능합니다. 필요한 항목만 선택하는 방식입니다.</div>
+            </details>
+          </article>
+          <article class="card faq-item">
+            <details>
+              <summary><span>원주가 아니어도 진행 가능한가요?</span><span class="plus">+</span></summary>
+              <div class="answer">온라인 기반 서비스라 지역 상관없이 진행 가능합니다. 다만 원주 기반 운영이라는 점은 회사 신뢰를 보여주는 포인트로 가져가면 좋습니다.</div>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">문의하기</div>
+            <h2 class="section-title">광고부터 돌리기 전에<br />지금 막힌 지점부터 확인해보세요</h2>
+            <p class="section-desc">문의는 길게 안 받아도 됩니다. 업종, 채널, 현재 고민만 받아도 방향은 잡힙니다. GitHub Pages 기준으로는 Formspree 또는 EmailJS 연결을 추천합니다.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>작업 가능 여부부터<br />먼저 확인해드립니다</h3>
+            <p>대행사 외주 문의, 플레이스 운영, 스토어 반응, 셀프 마케팅까지. 현재 필요한 작업이 뭔지 먼저 정리해드립니다.</p>
+
+            <div class="contact-lines">
+              <div class="contact-line">
+                <b>대표번호</b>
+                <span>1588-9097</span>
+              </div>
+              <d
