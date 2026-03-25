@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>깐부파트너스 | 트래픽·리뷰 전문 마케팅 실행사</title>
-  <meta name="description" content="대행사와 중소기업이 바로 맡길 수 있는 실행 중심 마케팅. 네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지 실제 반응이 움직이게 만드는 실행사." />
+  <title>서비스 | 깐부파트너스</title>
+  <meta name="description" content="네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 깐부파트너스의 실행 중심 마케팅 서비스 소개" />
   <style>
     :root {
       --navy: #0c1d3a;
       --navy-2: #12284d;
       --blue: #1f6fff;
       --blue-dark: #1457d6;
+      --green: #03c75a;
+      --green-dark: #00a14b;
       --mint: #14b8a6;
+      --amber: #f59e0b;
       --soft: #f7f8fa;
       --soft-blue: #eef5ff;
       --line: #e7edf5;
@@ -22,7 +25,7 @@
       --shadow-md: 0 22px 54px rgba(12, 29, 58, 0.12);
       --radius-sm: 16px;
       --radius-md: 24px;
-      --radius-lg: 34px;
+      --radius-lg: 36px;
       --max: 1220px;
     }
 
@@ -167,20 +170,31 @@
       border: 1px solid #dbe4f0;
     }
 
+    /* hero */
     .hero {
-      padding: 110px 0 90px;
+      position: relative;
+      overflow: hidden;
+      padding: 132px 0 104px;
       background:
-        radial-gradient(circle at 85% 10%, rgba(20,184,166,0.09), transparent 22%),
-        radial-gradient(circle at 10% 0%, rgba(31,111,255,0.12), transparent 26%),
-        linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
-      border-bottom: 1px solid rgba(31,111,255,0.08);
+        linear-gradient(135deg, rgba(12,29,58,0.86), rgba(31,111,255,0.74)),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 34px;
-      align-items: center;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(20,184,166,0.18), transparent 20%),
+        radial-gradient(circle at 10% 0%, rgba(255,255,255,0.08), transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
     }
 
     .hero-badge {
@@ -188,30 +202,25 @@
       align-items: center;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.82);
-      color: var(--blue);
+      background: rgba(255,255,255,0.14);
+      color: white;
       font-size: 14px;
       font-weight: 900;
       margin-bottom: 18px;
-      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(8px);
     }
 
     .hero h1 {
-      font-size: clamp(44px, 5vw, 76px);
+      font-size: clamp(42px, 5vw, 74px);
       line-height: 1.03;
-      letter-spacing: -0.07em;
-      color: var(--navy);
+      letter-spacing: -0.06em;
       margin-bottom: 20px;
-    }
-
-    .hero h1 .accent {
-      color: var(--blue);
     }
 
     .hero p {
       max-width: 760px;
       font-size: 20px;
-      color: var(--sub);
+      color: rgba(255,255,255,0.92);
       margin-bottom: 28px;
     }
 
@@ -219,134 +228,14 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hero-tags span {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid #dbe4f0;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .hero-panel {
-      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 75%);
-      color: white;
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero-panel-top {
-      padding: 34px 30px 26px;
-    }
-
-    .hero-panel-top h2 {
-      font-size: 26px;
-      line-height: 1.25;
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    .hero-panel-top p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.88);
-      margin: 0;
-    }
-
-    .hero-panel-list {
-      background: rgba(255,255,255,0.95);
-      padding: 22px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .hero-panel-item {
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: 14px;
-      align-items: center;
-      padding: 16px 16px;
-      border-radius: 18px;
-      border: 1px solid #e6ecf4;
-      background: #fff;
-    }
-
-    .hero-panel-num {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: #eef4ff;
-      color: var(--blue);
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .hero-panel-item h3 {
-      font-size: 18px;
-      line-height: 1.25;
-      color: var(--navy);
-      margin-bottom: 4px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-panel-item p {
-      font-size: 14px;
-      line-height: 1.65;
-      color: #475467;
-      margin: 0;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding: 18px 22px 24px;
-      background: rgba(255,255,255,0.95);
-    }
-
-    .hero-stat {
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid #e6ecf4;
-      padding: 18px 14px;
-      text-align: center;
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 34px;
-      line-height: 1;
-      color: var(--navy);
-      margin-bottom: 8px;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-stat span {
-      font-size: 14px;
-      font-weight: 800;
-      color: #475467;
     }
 
     .section {
-      padding: 96px 0;
+      padding: 98px 0;
     }
 
     .section-soft {
-      background: linear-gradient(180deg, #f8fafc 0%, #f2f6fb 100%);
+      background: linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
     }
 
     .section-chip {
@@ -376,47 +265,195 @@
       margin-bottom: 42px;
     }
 
-    .problem-grid {
+    /* service block common */
+    .service-block {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 30px;
+      align-items: center;
     }
 
-    .problem-card {
+    .service-block.reverse {
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    .service-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+      border-radius: 34px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(12,29,58,0.58) 100%);
+    }
+
+    .service-visual-content {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 1;
+      color: white;
+    }
+
+    .service-visual-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-visual-content h3 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.05em;
+      margin-bottom: 10px;
+    }
+
+    .service-visual-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .service-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-copy h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+    }
+
+    .service-copy .lead {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .service-copy p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .service-mini-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .service-mini-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 30px;
+      border-radius: 22px;
+      padding: 20px 22px;
       box-shadow: var(--shadow-sm);
       transition: transform .3s ease, box-shadow .3s ease;
     }
 
-    .problem-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    .service-mini-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 44px rgba(12,29,58,0.12);
     }
 
-    .problem-card h3 {
-      font-size: 28px;
-      line-height: 1.2;
-      letter-spacing: -0.04em;
+    .service-mini-card h4 {
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
       color: var(--navy);
-      margin-bottom: 14px;
     }
 
-    .problem-card p {
+    .service-mini-card p {
+      font-size: 15px;
       color: var(--sub);
-      font-size: 16px;
+      line-height: 1.75;
     }
 
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .service-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* naver */
+    .naver-visual {
+      background:
+        linear-gradient(135deg, rgba(3,199,90,0.18), rgba(0,161,75,0.18)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .naver .lead {
+      color: var(--green-dark);
+    }
+
+    .naver .service-mini-card {
+      border-left: 5px solid var(--green);
+    }
+
+    .naver .service-tags span {
+      background: #e8fff1;
+      color: var(--green-dark);
+    }
+
+    /* shopping */
+    .shopping-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .shopping-visual {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(245,158,11,0.10)),
+        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .shopping .lead {
+      color: var(--amber);
+    }
+
+    .shopping .service-mini-card {
+      border-left: 5px solid var(--amber);
+    }
+
+    .shopping .service-tags span {
+      background: #fff7e8;
+      color: #9a5b00;
+    }
+
+    /* mid banner */
     .mid-banner {
       position: relative;
       overflow: hidden;
       border-radius: 38px;
-      padding: 56px 50px;
+      padding: 58px 52px;
       background:
-        linear-gradient(135deg, rgba(12,29,58,0.92), rgba(31,111,255,0.86)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+        linear-gradient(135deg, rgba(12,29,58,0.92), rgba(31,111,255,0.88)),
+        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
       color: white;
       box-shadow: var(--shadow-md);
     }
@@ -453,88 +490,68 @@
       font-size: 18px;
     }
 
-    .service-overview {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    /* self */
+    .self-wrap {
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+      color: white;
     }
 
-    .service-overview-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-      transition: transform .3s ease, box-shadow .3s ease;
+    .self-wrap .section-chip {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      backdrop-filter: blur(8px);
     }
 
-    .service-overview-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    .self-wrap .section-title,
+    .self-wrap .section-sub {
+      color: white;
     }
 
-    .service-overview-num {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: #eef4ff;
-      color: var(--blue);
-      font-size: 20px;
-      font-weight: 900;
-      margin-bottom: 18px;
+    .self-wrap .section-sub {
+      color: rgba(255,255,255,0.88);
     }
 
-    .service-overview-card h3 {
-      font-size: 30px;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: var(--navy);
-      margin-bottom: 12px;
+    .self-visual {
+      background:
+        linear-gradient(135deg, rgba(20,184,166,0.18), rgba(31,111,255,0.18)),
+        url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
     }
 
-    .service-overview-card p {
-      color: var(--sub);
-      font-size: 16px;
-      line-height: 1.85;
-      margin-bottom: 16px;
+    .self .service-copy h2,
+    .self .service-copy p {
+      color: white;
     }
 
-    .service-overview-card ul {
-      display: grid;
-      gap: 8px;
-      padding-left: 18px;
+    .self .lead {
+      color: #8eddf5;
     }
 
-    .service-overview-card li {
-      color: var(--sub);
-      font-size: 15px;
+    .self .service-mini-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-left: 5px solid rgba(255,255,255,0.38);
+      box-shadow: none;
     }
 
-    .service-overview-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+    .self .service-mini-card h4 {
+      color: white;
     }
 
-    .service-overview-tags span {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f4f7fb;
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
+    .self .service-mini-card p {
+      color: rgba(255,255,255,0.88);
     }
 
-    .cta-band {
+    .self .service-tags span {
+      background: rgba(255,255,255,0.10);
+      color: white;
+    }
+
+    /* closing */
+    .closing-band {
       padding: 86px 0;
     }
 
-    .cta-box {
+    .closing-box {
       border-radius: 38px;
       padding: 48px 42px;
       background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 72%, #14b8a6 100%);
@@ -542,27 +559,27 @@
       box-shadow: var(--shadow-md);
     }
 
-    .cta-box h2 {
+    .closing-box h2 {
       font-size: clamp(32px, 4vw, 48px);
       line-height: 1.12;
       letter-spacing: -0.05em;
       margin-bottom: 16px;
     }
 
-    .cta-box p {
+    .closing-box p {
       max-width: 760px;
       color: rgba(255,255,255,0.92);
       margin-bottom: 24px;
       font-size: 18px;
     }
 
-    .cta-actions {
+    .closing-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
 
-    .cta-actions .btn-outline {
+    .closing-actions .btn-outline {
       background: rgba(255,255,255,0.12);
       color: white;
       border-color: rgba(255,255,255,0.24);
@@ -607,14 +624,13 @@
     }
 
     @media (max-width: 980px) {
-      .nav {
+      .nav,
+      .header-actions {
         display: none;
       }
 
-      .hero-grid,
-      .problem-grid,
-      .service-overview,
-      .hero-stats {
+      .service-block,
+      .service-block.reverse {
         grid-template-columns: 1fr;
       }
 
@@ -623,7 +639,7 @@
       }
 
       .hero {
-        padding: 88px 0 70px;
+        padding: 92px 0 72px;
       }
 
       .section {
@@ -631,13 +647,56 @@
       }
 
       .mid-banner,
-      .cta-box {
+      .closing-box {
         padding: 36px 28px;
         border-radius: 28px;
       }
 
-      .header-actions {
-        display: none;
+      .service-visual {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      .section-title,
+      .service-copy h2 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .section-sub,
+      .hero p {
+        font-size: 17px;
+      }
+
+      .mobile-call {
+        position: fixed;
+        bottom: 16px;
+        left: 14px;
+        right: 14px;
+        z-index: 9999;
+      }
+
+      .mobile-call a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 58px;
+        background: linear-gradient(135deg, #1f6fff, #1457d6);
+        color: #fff;
+        font-weight: 900;
+        border-radius: 16px;
+        font-size: 18px;
+        box-shadow: 0 12px 30px rgba(31,111,255,0.35);
       }
     }
   </style>
@@ -649,7 +708,7 @@
 
       <nav class="nav">
         <a href="./about.html">회사소개</a>
-        <a href="./services.html">서비스</a>
+        <a href="./services.html" class="active">서비스</a>
         <a href="./strength.html">강점</a>
         <a href="./portfolio.html">포트폴리오</a>
         <a href="./contact.html">문의하기</a>
@@ -665,200 +724,202 @@
   <main>
     <!-- hero -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <span class="hero-badge">트래픽·리뷰 전문 마케팅 실행사</span>
-          <h1>
-            대행사와 중소기업이 바로 맡길 수 있는<br />
-            <span class="accent">실행 중심 마케팅</span>
-          </h1>
-          <p>
-            네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지.  
-            보고서만 많은 대행이 아니라 실제로 유입과 반응이 움직이게 만드는 실행 구조에 집중합니다.
-          </p>
-
-          <div class="hero-actions">
-            <a href="./contact.html" class="btn btn-primary">지금 작업 가능 여부 확인</a>
-            <a href="./about.html" class="btn btn-outline">회사소개 보기</a>
-          </div>
-
-          <div class="hero-tags">
-            <span>네이버 플레이스</span>
-            <span>쇼핑 스토어</span>
-            <span>셀프 마케팅</span>
-            <span>대행사 외주 파트너 가능</span>
-          </div>
-        </div>
-
-        <div class="hero-panel reveal">
-          <div class="hero-panel-top">
-            <h2>문의가 남는 구조는<br />보기보다 단순합니다</h2>
-            <p>유입 흐름, 리뷰 신뢰, 시작 반응. 이 3개가 맞물리면 매장은 조용히 바뀝니다.</p>
-          </div>
-
-          <div class="hero-panel-list">
-            <div class="hero-panel-item">
-              <div class="hero-panel-num">01</div>
-              <div>
-                <h3>대행사에서 바로 맡길 수 있는 실행 구조</h3>
-                <p>응답 속도와 작업 진행이 중요한 외주 파트너 방식에 맞춰 움직입니다.</p>
-              </div>
-            </div>
-
-            <div class="hero-panel-item">
-              <div class="hero-panel-num">02</div>
-              <div>
-                <h3>대표 얼굴을 걸고 운영하는 원주 기반 실행사</h3>
-                <p>지역 사회 활동과 실제 운영 이력이 보이는 구조로 신뢰를 쌓고 있습니다.</p>
-              </div>
-            </div>
-
-            <div class="hero-panel-item">
-              <div class="hero-panel-num">03</div>
-              <div>
-                <h3>트래픽·리뷰 중심의 실전형 서비스</h3>
-                <p>보여주기식 광고보다 노출과 반응의 시작점을 만드는 방식에 집중합니다.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <strong>3</strong>
-              <span>핵심 서비스</span>
-            </div>
-            <div class="hero-stat">
-              <strong>24/7</strong>
-              <span>온라인 문의 접수</span>
-            </div>
-            <div class="hero-stat">
-              <strong>원주</strong>
-              <span>지역 기반 운영</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 문제 인식 -->
-    <section class="section">
-      <div class="container">
-        <span class="section-chip reveal">이런 상황에서 문의가 들어옵니다</span>
-        <h2 class="section-title reveal">광고가 안 먹히는 게 아니라<br />흐름이 끊겨 있는 경우가 많습니다</h2>
-        <p class="section-sub reveal">
-          대행사든 중소기업이든 막히는 장면은 비슷합니다.  
-          유입은 약하고, 리뷰는 부족하고, 시작 반응이 없어서 노출이 붙지 않는 상태입니다.
+      <div class="container hero-inner">
+        <span class="hero-badge reveal">SERVICES</span>
+        <h1 class="reveal">서비스마다<br />보이는 느낌부터 다르게 설계했습니다</h1>
+        <p class="reveal">
+          네이버는 네이버답게, 쇼핑은 전환 중심으로, 셀프 마케팅은 빠르고 직관적인 툴 느낌으로.  
+          서비스가 다르면 화면의 분위기도 달라야 한다고 봤습니다.
         </p>
 
-        <div class="problem-grid">
-          <article class="problem-card reveal">
-            <h3>플레이스는 보이는데<br />문의가 없습니다</h3>
-            <p>지도에는 보이지만 저장과 리뷰 신뢰가 약해서 실제 문의로 이어지지 않는 상태입니다.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <h3>스토어 유입은 있는데<br />반응이 없습니다</h3>
-            <p>상품은 괜찮은데 찜과 관심 신호가 부족해서 검색 이후 흐름이 끊겨 있는 상태입니다.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <h3>콘텐츠를 올리는데도<br />아무 반응이 없습니다</h3>
-            <p>좋아요, 조회수, 초기 반응이 약해 시작점 자체가 형성되지 않는 상태입니다.</p>
-          </article>
+        <div class="hero-actions reveal">
+          <a href="./contact.html" class="btn btn-primary">서비스 상담 문의</a>
+          <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
         </div>
       </div>
     </section>
 
-    <!-- 중간 배너 -->
-    <section class="section-soft section">
+    <!-- naver -->
+    <section class="section naver">
       <div class="container">
-        <div class="mid-banner reveal">
-          <span class="section-chip">핵심 메시지</span>
-          <h2>저희는 강남 빌딩숲에 숨어서 일하지 않습니다</h2>
-          <p>
-            원주에서 얼굴을 내밀고 활동하며, 지역에서 직접 사람을 만나고 운영합니다.  
-            온라인만 번지르르한 구조보다 누가 운영하는지 보이는 구조가 더 오래 간다고 믿기 때문입니다.
-          </p>
-        </div>
-      </div>
-    </section>
+        <span class="section-chip reveal">NAVER PLACE</span>
+        <div class="service-block">
+          <div class="service-visual naver-visual reveal">
+            <div class="service-visual-content">
+              <span class="service-visual-label">네이버 플레이스</span>
+              <h3>보이기만 하는 매장보다<br />믿게 되는 매장이 먼저입니다</h3>
+              <p>노출만이 아니라 클릭, 저장, 리뷰 신뢰가 함께 붙는 흐름을 만듭니다.</p>
+            </div>
+          </div>
 
-    <!-- 서비스 요약 -->
-    <section class="section">
-      <div class="container">
-        <span class="section-chip reveal">핵심 서비스</span>
-        <h2 class="section-title reveal">많이 하는 척보다<br />정확하게 움직이는 구조를 만듭니다</h2>
-        <p class="section-sub reveal">
-          서비스가 많아 보이면 커 보일 수는 있습니다.  
-          그런데 실제로 맡기는 사람 입장에서는 “뭘 잘하는지 모르겠다”는 반감이 더 먼저 생깁니다.  
-          그래서 저희는 실제 반응에 가까운 3가지에 집중합니다.
-        </p>
+          <div class="service-copy reveal">
+            <h2>네이버 플레이스</h2>
+            <p class="lead">플레이스는 노출판이 아니라, 믿게 만드는 흐름까지 같이 가야 합니다.</p>
+            <p>
+              지도에서 보이기만 하는 매장이 아니라,  
+              실제 클릭과 저장, 리뷰 신뢰까지 이어지는 흐름을 만드는 작업입니다.  
+              맛집, 병원, 미용, 로컬 업종은 첫인상이 곧 플레이스에서 결정되는 경우가 많습니다.
+            </p>
 
-        <div class="service-overview">
-          <article class="service-overview-card reveal">
-            <div class="service-overview-num">01</div>
-            <h3>네이버 플레이스</h3>
-            <p>보이기만 하는 상태가 아니라 클릭, 저장, 리뷰 신뢰까지 이어지는 흐름을 만드는 작업입니다.</p>
-            <ul>
-              <li>플레이스 트래픽 운영</li>
-              <li>리뷰 흐름 관리</li>
-              <li>업종별 플레이스 방향 제안</li>
-            </ul>
-            <div class="service-overview-tags">
+            <div class="service-mini-grid">
+              <article class="service-mini-card">
+                <h4>검색 유입 흐름</h4>
+                <p>지도 노출 이후 클릭과 저장까지 자연스럽게 이어지는 구조를 만듭니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>리뷰 신뢰 구조</h4>
+                <p>보여주기 리뷰가 아니라 실제 방문과 문의 결정에 도움이 되는 흐름을 설계합니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>업종별 플레이스 방향</h4>
+                <p>맛집, 병원, 미용, 지역 서비스업은 고객이 보는 포인트가 달라서 흐름도 다르게 잡아야 합니다.</p>
+              </article>
+            </div>
+
+            <div class="service-tags">
               <span>맛집</span>
               <span>병원</span>
               <span>미용</span>
               <span>로컬 매장</span>
+              <span>플레이스 흐름</span>
             </div>
-          </article>
-
-          <article class="service-overview-card reveal">
-            <div class="service-overview-num">02</div>
-            <h3>쇼핑 스토어</h3>
-            <p>상품은 괜찮은데 반응이 약해 묻히는 스토어에 필요한 시작 신호를 보강하는 방향입니다.</p>
-            <ul>
-              <li>찜·관심 신호 형성</li>
-              <li>유입 이후 흐름 보강</li>
-              <li>전환 앞단 구조 개선</li>
-            </ul>
-            <div class="service-overview-tags">
-              <span>스마트스토어</span>
-              <span>상품 반응</span>
-              <span>유입 구조</span>
-            </div>
-          </article>
-
-          <article class="service-overview-card reveal">
-            <div class="service-overview-num">03</div>
-            <h3>셀프 마케팅</h3>
-            <p>대표가 직접 반응 숫자를 조절할 수 있는 도구형 서비스로, 테스트와 시작 반응 확보에 좋습니다.</p>
-            <ul>
-              <li>인스타그램 좋아요/팔로우</li>
-              <li>유튜브 조회수/좋아요</li>
-              <li>스토어 찜/관심 신호</li>
-            </ul>
-            <div class="service-overview-tags">
-              <span>인스타</span>
-              <span>유튜브</span>
-              <span>셀프 운영</span>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-band">
+    <!-- shopping -->
+    <section class="section section-soft shopping-wrap shopping">
       <div class="container">
-        <div class="cta-box reveal">
-          <h2>지금 막힌 부분만<br />먼저 풀어드릴 수 있습니다</h2>
+        <span class="section-chip reveal">SHOPPING STORE</span>
+        <div class="service-block reverse">
+          <div class="service-copy reveal">
+            <h2>쇼핑 스토어</h2>
+            <p class="lead">스토어는 상품 수보다 먼저, 시작 반응이 붙는 구조가 필요합니다.</p>
+            <p>
+              상품은 괜찮은데 찜과 관심이 약해서 묻히는 경우가 많습니다.  
+              검색만 되고 끝나는 상태가 아니라, 반응이 이어지는 구조를 만드는 것이 핵심입니다.  
+              구매는 한 번에 일어나지 않고, 그 전에 고객이 다시 보게 되는 흐름이 먼저 만들어져야 합니다.
+            </p>
+
+            <div class="service-mini-grid">
+              <article class="service-mini-card">
+                <h4>유입 이후 흐름</h4>
+                <p>검색 유입 이후 찜, 클릭, 관심으로 이어지는 반응의 앞단을 먼저 보강합니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>관심 신호 형성</h4>
+                <p>좋은 상품인데도 묻히는 상태에서 필요한 초기 관심 신호를 만드는 작업입니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>전환 앞단 보강</h4>
+                <p>구매 직전까지 가기 전에 끊기는 흐름을 다시 이어주기 위한 구조를 잡습니다.</p>
+              </article>
+            </div>
+
+            <div class="service-tags">
+              <span>스마트스토어</span>
+              <span>상품 반응</span>
+              <span>찜</span>
+              <span>관심 신호</span>
+              <span>전환 흐름</span>
+            </div>
+          </div>
+
+          <div class="service-visual shopping-visual reveal">
+            <div class="service-visual-content">
+              <span class="service-visual-label">쇼핑 스토어</span>
+              <h3>좋은 상품인데도 묻히는 이유는<br />반응의 시작점이 약하기 때문입니다</h3>
+              <p>유입보다 한 단계 뒤에 있는 관심 신호를 먼저 보강해야 스토어가 살아납니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- middle banner -->
+    <section class="section">
+      <div class="container">
+        <div class="mid-banner reveal">
+          <span class="section-chip">왜 3개만 하냐</span>
+          <h2>많이 하는 척보다<br />정확하게 움직이는 구조가 중요합니다</h2>
           <p>
-            전체를 한 번에 바꾸는 게 아니라, 지금 끊겨 있는 한 지점부터 같이 정리해드립니다.
+            서비스가 많아 보이면 커 보일 수는 있습니다.  
+            그런데 실제로 맡기는 사람 입장에서는 “뭘 잘하는지 모르겠다”는 반감이 더 먼저 생깁니다.  
+            그래서 저희는 실제 반응에 가까운 3가지에 집중합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- self -->
+    <section class="section self-wrap self">
+      <div class="container">
+        <span class="section-chip reveal">SELF MARKETING</span>
+        <div class="service-block">
+          <div class="service-visual self-visual reveal">
+            <div class="service-visual-content">
+              <span class="service-visual-label">셀프 마케팅</span>
+              <h3>콘텐츠가 안 먹히는 게 아니라<br />처음 반응이 너무 약한 경우가 많습니다</h3>
+              <p>대표가 직접 필요한 반응을 선택해서 운영할 수 있는 도구형 서비스입니다.</p>
+            </div>
+          </div>
+
+          <div class="service-copy reveal">
+            <h2>셀프 마케팅</h2>
+            <p class="lead">셀프의 핵심은 과장이 아니라, 빠른 반응 테스트입니다.</p>
+            <p>
+              인스타그램, 유튜브, 스토어처럼 시작 반응이 중요한 채널에서  
+              대표가 직접 필요한 반응을 선택해서 운영할 수 있는 구조입니다.  
+              속도감 있게 테스트하고, 필요한 만큼만 바로 활용할 수 있다는 점이 강점입니다.
+            </p>
+
+            <div class="service-mini-grid">
+              <article class="service-mini-card">
+                <h4>인스타그램</h4>
+                <p>좋아요, 팔로우, 조회수처럼 시작 반응을 직접 선택해서 운영할 수 있습니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>유튜브</h4>
+                <p>조회수, 좋아요 등 초반 신호가 필요한 영상에서 빠르게 활용할 수 있습니다.</p>
+              </article>
+
+              <article class="service-mini-card">
+                <h4>스토어 / 기타 채널</h4>
+                <p>찜, 관심 신호처럼 채널마다 필요한 항목만 골라 활용할 수 있는 방식입니다.</p>
+              </article>
+            </div>
+
+            <div class="service-tags">
+              <span>인스타</span>
+              <span>유튜브</span>
+              <span>좋아요</span>
+              <span>조회수</span>
+              <span>셀프 운영</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- closing -->
+    <section class="closing-band">
+      <div class="container">
+        <div class="closing-box reveal">
+          <h2>서비스는 많아 보이게보다<br />맡겼을 때 흐름이 살아나야 합니다</h2>
+          <p>
+            네이버는 신뢰 흐름, 쇼핑은 관심 흐름, 셀프는 시작 반응.  
+            각각의 역할이 다르기 때문에 보여주는 방식도 다르게 설계했습니다.
           </p>
 
-          <div class="cta-actions">
-            <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
+          <div class="closing-actions">
             <a href="./contact.html" class="btn btn-primary">문의하기</a>
+            <a href="./portfolio.html" class="btn btn-outline">포트폴리오 보기</a>
           </div>
         </div>
       </div>
@@ -881,6 +942,10 @@
       </div>
     </div>
   </footer>
+
+  <div class="mobile-call">
+    <a href="tel:1588-9097">📞 1588-9097 바로 전화</a>
+  </div>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
