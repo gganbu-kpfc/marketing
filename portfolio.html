@@ -5,12 +5,669 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>포트폴리오 | 깐부파트너스</title>
   <meta name="description" content="플레이스, 스토어, 셀프 마케팅 실제 사례 기반 포트폴리오" />
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/animation.css" />
+  <style>
+    :root {
+      --navy: #0c1d3a;
+      --navy-2: #12284d;
+      --blue: #1f6fff;
+      --blue-dark: #1457d6;
+      --mint: #14b8a6;
+      --amber: #f59e0b;
+      --soft: #f7f8fa;
+      --soft-blue: #eef5ff;
+      --line: #e7edf5;
+      --text: #111827;
+      --sub: #344054;
+      --white: #ffffff;
+      --shadow-sm: 0 12px 30px rgba(12, 29, 58, 0.06);
+      --shadow-md: 0 22px 54px rgba(12, 29, 58, 0.12);
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 36px;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.75;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(231,237,245,0.9);
+      transition: box-shadow .2s ease, background .2s ease;
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 8px 28px rgba(12,29,58,0.08);
+      background: rgba(255,255,255,0.94);
+    }
+
+    .header-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 15px;
+      font-weight: 800;
+      color: #334155;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--blue);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 120%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transition: left .6s ease;
+    }
+
+    .btn:hover::after {
+      left: 120%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(31,111,255,0.20);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid #dbe4f0;
+    }
+
+    /* hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 110px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.86), rgba(31,111,255,0.72)),
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(20,184,166,0.15), transparent 20%),
+        radial-gradient(circle at 10% 0%, rgba(255,255,255,0.10), transparent 20%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 70px);
+      line-height: 1.04;
+      letter-spacing: -0.06em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 19px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
+    }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .section-sub {
+      max-width: 820px;
+      color: var(--sub);
+      font-size: 19px;
+      margin-bottom: 42px;
+    }
+
+    /* case block */
+    .case-block {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .case-visual {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      min-height: 420px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.18), rgba(31,111,255,0.18)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+      box-shadow: var(--shadow-md);
+    }
+
+    .case-visual.store {
+      background:
+        linear-gradient(135deg, rgba(245,158,11,0.16), rgba(255,255,255,0.08)),
+        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .case-visual.self {
+      background:
+        linear-gradient(135deg, rgba(20,184,166,0.18), rgba(31,111,255,0.16)),
+        url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .case-visual-label {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      display: inline-flex;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .case-visual-caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(12,29,58,0.58);
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    .case-visual-caption h3 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .case-visual-caption p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .case-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .case-box.before {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      border-left: 6px solid #94a3b8;
+    }
+
+    .case-box.after {
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+      border-left: 6px solid var(--blue);
+    }
+
+    .case-box h4 {
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .case-box.before h4 {
+      color: #475467;
+    }
+
+    .case-box.after h4 {
+      color: var(--blue);
+    }
+
+    .case-box ul {
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-box li {
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--sub);
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .case-box li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #94a3b8;
+    }
+
+    .case-box.after li::before {
+      background: var(--blue);
+    }
+
+    /* mid banner */
+    .mid-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: 56px 50px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.92), rgba(31,111,255,0.86)),
+        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .mid-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.10), transparent 26%);
+      pointer-events: none;
+    }
+
+    .mid-banner > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-banner .section-chip {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .mid-banner h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .mid-banner p {
+      max-width: 820px;
+      color: rgba(255,255,255,0.92);
+      font-size: 18px;
+    }
+
+    /* summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .summary-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    }
+
+    .summary-card h3 {
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .summary-card p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .summary-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .summary-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* CTA */
+    .cta-band {
+      padding: 86px 0;
+    }
+
+    .cta-box {
+      border-radius: 38px;
+      padding: 48px 42px;
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 72%, #14b8a6 100%);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-actions .btn-outline {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    .site-footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 800;
+      color: #475467;
+    }
+
+    /* animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-box,
+    .summary-card {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .case-box:hover,
+    .summary-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
+      .case-block,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        padding: 92px 0 72px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .mid-banner,
+      .cta-box {
+        padding: 36px 28px;
+        border-radius: 28px;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .case-visual {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      .section-title {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .section-sub,
+      .hero p {
+        font-size: 17px;
+      }
+
+      .case-visual-caption h3 {
+        font-size: 22px;
+      }
+
+      .case-box h4 {
+        font-size: 22px;
+      }
+
+      .mobile-call {
+        position: fixed;
+        bottom: 16px;
+        left: 14px;
+        right: 14px;
+        z-index: 9999;
+      }
+
+      .mobile-call a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 58px;
+        background: linear-gradient(135deg, #1f6fff, #1457d6);
+        color: #fff;
+        font-weight: 900;
+        border-radius: 16px;
+        font-size: 18px;
+        box-shadow: 0 12px 30px rgba(31,111,255,0.35);
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="./index.html" class="logo">깐부<span>파트너스</span></a>
 
@@ -22,129 +679,225 @@
         <a href="./contact.html">문의하기</a>
       </nav>
 
-      <a href="./contact.html" class="btn btn-primary hover-btn">상담 신청</a>
+      <div class="header-actions">
+        <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
+        <a href="./contact.html" class="btn btn-primary">상담 신청</a>
+      </div>
     </div>
   </header>
 
   <main>
-   <section class="hero-visual">
-  <div class="container">
-    <div class="hero-overlay">
-      <span class="hero-badge">PORTFOLIO</span>
-      <h1>이런 상황에서<br />이렇게 바뀝니다</h1>
-      <p>
-        말로 설명하는 것보다, 실제 상황 기준으로 보는 게 빠릅니다.
-        비슷한 상황이라면 방향은 거의 같습니다.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="hero-badge reveal">PORTFOLIO</span>
+        <h1 class="reveal">이런 상황에서<br />이렇게 바뀝니다</h1>
+        <p class="reveal">
+          말로 설명하는 것보다 실제 상황 기준으로 보는 게 빠릅니다.  
+          비슷한 상황이 있다면 방향은 거의 같습니다.  
+          결국 중요한 건 노출이 아니라, 흐름이 살아나는지입니다.
+        </p>
+      </div>
+    </section>
 
-    <!-- CASE 1 -->
+    <!-- case 1 -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">CASE 01</p>
-          <h2>플레이스 노출은 되는데 문의가 없는 매장</h2>
-          <p>보이기는 하는데, 고객이 믿고 들어오지 않는 상태</p>
-        </div>
+        <span class="section-chip reveal">CASE 01</span>
+        <h2 class="section-title reveal">플레이스 노출은 되는데<br />문의가 약한 매장</h2>
+        <p class="section-sub reveal">
+          보이기는 하는데 고객이 믿고 들어오지 않는 상태.  
+          클릭과 저장, 리뷰 신뢰가 동시에 보강되어야 실제 문의가 남습니다.
+        </p>
 
-        <div class="portfolio-box">
-          <div class="portfolio-before hover-card reveal-left">
-            <h3>이전 상황</h3>
-            <ul>
-              <li>지도에는 노출됨</li>
-              <li>클릭은 있지만 문의 없음</li>
-              <li>리뷰 수 적고 신뢰 부족</li>
-            </ul>
+        <div class="case-block">
+          <div class="case-visual reveal">
+            <span class="case-visual-label">네이버 플레이스</span>
+            <div class="case-visual-caption">
+              <h3>보이기만 하는 매장 → 저장과 문의가 남는 매장</h3>
+              <p>노출 자체보다 고객이 머무르고 믿게 되는 흐름을 만드는 작업입니다.</p>
+            </div>
           </div>
 
-          <div class="portfolio-after hover-card reveal-right">
-            <h3>변화 이후</h3>
-            <ul>
-              <li>클릭 → 저장 흐름 생김</li>
-              <li>리뷰 신뢰 형성</li>
-              <li>방문/문의 자연스럽게 증가</li>
-            </ul>
+          <div class="case-side">
+            <div class="case-box before reveal">
+              <h4>이전 상황</h4>
+              <ul>
+                <li>지도에는 노출되지만 클릭 이후 반응이 약함</li>
+                <li>리뷰 수와 신뢰도가 낮아 비교 단계에서 밀림</li>
+                <li>문의보다 단순 조회로 끝나는 흐름이 많음</li>
+              </ul>
+            </div>
+
+            <div class="case-box after reveal">
+              <h4>변화 이후</h4>
+              <ul>
+                <li>클릭 → 저장 → 관심 흐름이 자연스럽게 형성됨</li>
+                <li>리뷰 신뢰가 붙어 방문 전 결정 확률이 올라감</li>
+                <li>플레이스가 실제 문의와 연결되는 구조로 바뀜</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CASE 2 -->
+    <!-- mid banner -->
+    <section class="section-soft section">
+      <div class="container">
+        <div class="mid-banner reveal">
+          <span class="section-chip">핵심 기준</span>
+          <h2>결과는 결국<br />흐름이 연결됐느냐에서 갈립니다</h2>
+          <p>
+            노출만으로는 매출이 안 생깁니다.  
+            클릭, 저장, 리뷰, 관심, 문의까지 이어지는 흐름이 만들어져야  
+            실제로 움직이는 포트폴리오가 됩니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- case 2 -->
+    <section class="section">
+      <div class="container">
+        <span class="section-chip reveal">CASE 02</span>
+        <h2 class="section-title reveal">스토어 유입은 있는데<br />찜과 관심이 약한 상품</h2>
+        <p class="section-sub reveal">
+          검색 유입은 있는데 구매 전 단계의 반응이 없는 상태.  
+          좋은 상품이라도 반응의 시작점이 없으면 쉽게 묻힙니다.
+        </p>
+
+        <div class="case-block">
+          <div class="case-visual store reveal">
+            <span class="case-visual-label">쇼핑 스토어</span>
+            <div class="case-visual-caption">
+              <h3>검색만 되는 상품 → 관심이 붙는 상품</h3>
+              <p>찜과 관심 신호를 통해 구매 전 단계 흐름을 먼저 살리는 구조입니다.</p>
+            </div>
+          </div>
+
+          <div class="case-side">
+            <div class="case-box before reveal">
+              <h4>이전 상황</h4>
+              <ul>
+                <li>상품 유입은 있으나 찜과 관심 신호가 거의 없음</li>
+                <li>검색 이후 한 번 보고 이탈하는 흐름이 많음</li>
+                <li>구매 직전까지 가기 전에 관심이 끊어짐</li>
+              </ul>
+            </div>
+
+            <div class="case-box after reveal">
+              <h4>변화 이후</h4>
+              <ul>
+                <li>찜과 관심 신호가 붙으며 상품 체류가 늘어남</li>
+                <li>고객이 다시 한 번 보는 흐름이 생김</li>
+                <li>전환 앞단이 보강되어 구매 가능성이 높아짐</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- case 3 -->
     <section class="section section-soft">
       <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">CASE 02</p>
-          <h2>스토어 유입은 있는데 반응이 없는 상품</h2>
-          <p>상품은 괜찮은데 관심 신호가 부족한 상태</p>
-        </div>
+        <span class="section-chip reveal">CASE 03</span>
+        <h2 class="section-title reveal">콘텐츠는 올리는데<br />초기 반응이 약한 계정</h2>
+        <p class="section-sub reveal">
+          콘텐츠를 계속 올리고 있지만 시작 반응이 약해서 묻히는 상태.  
+          이 경우 문제는 콘텐츠 자체보다 초반 신호가 부족한 데 있을 때가 많습니다.
+        </p>
 
-        <div class="portfolio-box">
-          <div class="portfolio-before hover-card reveal-left">
-            <h3>이전 상황</h3>
-            <ul>
-              <li>검색 유입은 있음</li>
-              <li>찜/관심 거의 없음</li>
-              <li>구매 전환 낮음</li>
-            </ul>
+        <div class="case-block">
+          <div class="case-visual self reveal">
+            <span class="case-visual-label">셀프 마케팅</span>
+            <div class="case-visual-caption">
+              <h3>반응 없는 계정 → 시작 반응이 붙는 계정</h3>
+              <p>대표가 직접 반응 신호를 선택해서 테스트하고 흐름을 만드는 방식입니다.</p>
+            </div>
           </div>
 
-          <div class="portfolio-after hover-card reveal-right">
-            <h3>변화 이후</h3>
-            <ul>
-              <li>찜/관심 신호 증가</li>
-              <li>상품 신뢰 상승</li>
-              <li>구매 전환 자연스럽게 상승</li>
-            </ul>
+          <div class="case-side">
+            <div class="case-box before reveal">
+              <h4>이전 상황</h4>
+              <ul>
+                <li>게시물은 꾸준하지만 좋아요와 조회가 낮음</li>
+                <li>초기 반응이 없어 알고리즘 노출이 약함</li>
+                <li>계정이 정체된 느낌이 강함</li>
+              </ul>
+            </div>
+
+            <div class="case-box after reveal">
+              <h4>변화 이후</h4>
+              <ul>
+                <li>초기 반응이 붙으며 노출 시작점이 생김</li>
+                <li>대표가 필요한 항목만 직접 선택해 활용 가능</li>
+                <li>테스트와 반응 체크가 훨씬 빠르게 가능해짐</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CASE 3 -->
+    <!-- summary -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">CASE 03</p>
-          <h2>콘텐츠 올리는데 반응이 없는 계정</h2>
-          <p>노력은 하는데 시작 반응이 부족한 상태</p>
-        </div>
+        <span class="section-chip reveal">요약하면</span>
+        <h2 class="section-title reveal">결국 포트폴리오는<br />“어떤 흐름을 바꿨는가” 입니다</h2>
+        <p class="section-sub reveal">
+          저희는 숫자만 보기 좋게 꾸미는 구조보다,  
+          실제로 고객이 움직이게 되는 흐름을 만드는 포트폴리오를 더 중요하게 생각합니다.
+        </p>
 
-        <div class="portfolio-box">
-          <div class="portfolio-before hover-card reveal-left">
-            <h3>이전 상황</h3>
-            <ul>
-              <li>게시물 조회 낮음</li>
-              <li>좋아요/댓글 거의 없음</li>
-              <li>계정 성장 정체</li>
-            </ul>
-          </div>
+        <div class="summary-grid">
+          <article class="summary-card reveal">
+            <h3>플레이스는<br />신뢰 흐름</h3>
+            <p>노출보다 클릭과 저장, 리뷰 신뢰까지 이어져야 실제 문의가 남습니다.</p>
+            <div class="summary-tags">
+              <span>클릭</span>
+              <span>저장</span>
+              <span>리뷰</span>
+            </div>
+          </article>
 
-          <div class="portfolio-after hover-card reveal-right">
-            <h3>변화 이후</h3>
-            <ul>
-              <li>초기 반응 형성</li>
-              <li>알고리즘 노출 증가</li>
-              <li>계정 성장 흐름 시작</li>
-            </ul>
-          </div>
+          <article class="summary-card reveal">
+            <h3>스토어는<br />관심 흐름</h3>
+            <p>검색 유입 다음에 찜과 관심이 붙어야 구매 전 단계가 살아납니다.</p>
+            <div class="summary-tags">
+              <span>유입</span>
+              <span>찜</span>
+              <span>관심</span>
+            </div>
+          </article>
+
+          <article class="summary-card reveal">
+            <h3>셀프는<br />시작 반응</h3>
+            <p>콘텐츠 문제처럼 보여도 사실은 초반 반응이 너무 약한 경우가 많습니다.</p>
+            <div class="summary-tags">
+              <span>좋아요</span>
+              <span>조회</span>
+              <span>초기 신호</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section cta-section">
+    <section class="cta-band">
       <div class="container">
-        <div class="cta-box reveal-up active">
-          <div>
-            <p class="section-label">CONTACT</p>
-            <h2>지금 상황이 비슷하다면<br />방향은 이미 정해져 있습니다</h2>
-            <p>업종과 현재 상태만 알려주시면, 어디부터 손대야 할지 바로 정리해드립니다.</p>
-          </div>
-          <div class="button-row">
-            <a href="./contact.html" class="btn btn-primary hover-btn">문의하기</a>
-            <a href="./services.html" class="btn btn-outline hover-btn">서비스 보기</a>
+        <div class="cta-box reveal">
+          <h2>지금 상황이 비슷하다면<br />어디부터 손대야 할지 바로 보입니다</h2>
+          <p>
+            업종과 현재 상태만 알려주시면,  
+            무엇을 먼저 보강해야 하는지 방향부터 정리해드립니다.
+          </p>
+
+          <div class="cta-actions">
+            <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
+            <a href="./contact.html" class="btn btn-primary">문의하기</a>
           </div>
         </div>
       </div>
@@ -155,7 +908,7 @@
     <div class="container footer-inner">
       <div>
         <a href="./index.html" class="logo">깐부<span>파트너스</span></a>
-        <p>트래픽·리뷰 전문 마케팅 실행사</p>
+        <p style="color:#475467; font-size:14px; margin-top:8px;">트래픽·리뷰 전문 마케팅 실행사</p>
       </div>
 
       <div class="footer-links">
@@ -168,7 +921,37 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
-  <script src="./js/animation.js"></script>
+  <div class="mobile-call">
+    <a href="tel:1588-9097">📞 1588-9097 바로 전화</a>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const siteHeader = document.getElementById('siteHeader');
+
+    function revealOnScroll() {
+      const trigger = window.innerHeight * 0.88;
+
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    function updateHeader() {
+      if (window.scrollY > 8) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', updateHeader);
+    window.addEventListener('load', revealOnScroll);
+    window.addEventListener('load', updateHeader);
+  </script>
 </body>
 </html>
