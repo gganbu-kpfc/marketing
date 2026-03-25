@@ -667,3 +667,573 @@
       border: 1px solid var(--line);
       background: white;
       display: grid;
+      place-items: center;
+      padding: 16px;
+      font-weight: 900;
+      color: #334155;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .case-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .case-card { overflow: hidden; padding: 0; }
+
+    .case-thumb {
+      aspect-ratio: 16 / 10;
+      position: relative;
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+      overflow: hidden;
+    }
+
+    .case-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-thumb .fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .case-body { padding: 24px; }
+
+    .case-badge {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--sky);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .case-body h3 {
+      margin: 0 0 10px;
+      font-size: 23px;
+      line-height: 1.3;
+    }
+
+    .case-body ul {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .process-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .process-card {
+      position: relative;
+      min-height: 210px;
+      background: #fff;
+    }
+
+    .step-label {
+      display: inline-flex;
+      margin-bottom: 16px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item details { border-radius: 22px; }
+    .faq-item .answer {
+      margin-top: 14px;
+      color: var(--sub);
+      font-size: 15px;
+    }
+
+    .faq-item .plus {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--sky);
+      color: var(--blue);
+      flex: none;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .contact-grid { grid-template-columns: 0.94fr 1.06fr; }
+
+    .contact-panel {
+      padding: 34px;
+      border-radius: 30px;
+      color: white;
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 12px;
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-panel p {
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-line {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-line b {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-line span { font-size: 17px; font-weight: 800; }
+
+    .form-wrap {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field,
+    textarea,
+    select {
+      width: 100%;
+      min-height: 54px;
+      border-radius: 14px;
+      border: 1px solid #d0d5dd;
+      padding: 14px 16px;
+      color: var(--text);
+      background: white;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    textarea { min-height: 150px; resize: vertical; }
+
+    .field:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(31,111,255,0.08);
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .agree {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0 20px;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .agree input { width: 18px; height: 18px; }
+
+    .notice {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #f8fbff;
+      color: #2c4a84;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 96px;
+      padding: 42px 0 56px;
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .footer-grid { grid-template-columns: 1.2fr 0.7fr 0.9fr; }
+
+    .footer-title {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .footer p,
+    .footer li { color: var(--sub); font-size: 14px; }
+    .footer ul { margin: 0; padding-left: 18px; }
+    .copy { margin-top: 22px; color: #98a2b3; font-size: 13px; }
+
+    .top-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 999px;
+      border: 0;
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 18px 30px rgba(12, 29, 58, 0.22);
+    }
+
+    .small-note { margin-top: 14px; font-size: 13px; color: #98a2b3; }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .company-wrap,
+      .contact-grid,
+      .section-head,
+      .content-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head { align-items: start; }
+      .grid-4,
+      .dark-cards,
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-grid,
+      .case-grid,
+      .grid-3,
+      .trust-grid,
+      .photo-grid,
+      .logo-grid,
+      .footer-grid,
+      .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links,
+      .nav-actions .btn-outline,
+      .nav-actions .btn-primary { display: none; }
+
+      .menu-toggle { display: inline-flex; }
+      .mobile-panel.active { display: block; }
+
+      .hero { padding-top: 58px; }
+      .hero-stats,
+      .form-grid,
+      .grid-2,
+      .service-grid,
+      .case-grid,
+      .grid-3,
+      .grid-4,
+      .dark-cards,
+      .process-grid,
+      .trust-grid,
+      .photo-grid,
+      .logo-grid,
+      .contact-grid,
+      .footer-grid,
+      .faq-grid { grid-template-columns: 1fr; }
+
+      .section { padding: 72px 0; }
+      .dark-band { padding: 34px 24px; border-radius: 28px; }
+      .hero-panel-top h3 { font-size: 25px; }
+      .contact-panel h3 { font-size: 30px; }
+      .portrait-card { min-height: 520px; }
+      .mobile-panel { inset-top: 84px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 74px; }
+      .hero-title { font-size: 40px; }
+      .hero-desc { font-size: 16px; }
+      .section-title { font-size: 30px; }
+      .card,
+      .form-wrap,
+      .contact-panel,
+      .portrait-overlay { padding: 22px; }
+      .hero-panel-body { padding: 18px; }
+      .hero-panel-top { padding: 22px; }
+      .hero-stat strong { font-size: 22px; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+      .top-float { right: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="logo">깐부<span>파트너스</span></a>
+
+      <nav class="nav-links">
+        <a href="#about">회사소개</a>
+        <a href="#services">서비스</a>
+        <a href="#strength">강점</a>
+        <a href="#cases">포트폴리오</a>
+        <a href="#contact">문의하기</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#cases" class="btn btn-outline">작업 사례 보기</a>
+        <a href="#contact" class="btn btn-primary">상담 신청</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기" id="menuToggle">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="container">
+      <a href="#about">회사소개</a>
+      <a href="#services">서비스</a>
+      <a href="#strength">강점</a>
+      <a href="#cases">포트폴리오</a>
+      <a href="#process">진행방식</a>
+      <a href="#contact">문의하기</a>
+      <a href="#contact" class="btn btn-primary">무료 상담 신청</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">트래픽·리뷰 전문 마케팅 실행사</div>
+          <h1 class="hero-title">
+            대행사와 중소기업이 바로 맡길 수 있는<br />
+            <strong>실행 중심 마케팅</strong>
+          </h1>
+          <p class="hero-desc">
+            네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 보고서만 많은 대행이 아니라 실제로 유입과 반응이 움직이게 만드는 실행 구조에 집중합니다.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">지금 작업 가능 여부 확인</a>
+            <a href="#about" class="btn btn-outline">회사소개 보기</a>
+          </div>
+
+          <div class="hero-badges">
+            <span class="badge">네이버 플레이스</span>
+            <span class="badge">쇼핑 스토어</span>
+            <span class="badge">셀프 마케팅</span>
+            <span class="badge">대행사 외주 파트너 가능</span>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-top">
+            <h3>문의가 남는 구조는<br />보기보다 단순합니다</h3>
+            <p>유입 흐름, 리뷰 신뢰, 시작 반응. 이 3개가 맞물리면 매장은 조용히 바뀝니다.</p>
+          </div>
+          <div class="hero-panel-body">
+            <div class="mini-cards">
+              <div class="mini-card">
+                <div class="mini-num">01</div>
+                <div>
+                  <b>대행사에서 바로 맡길 수 있는 실행 구조</b>
+                  <span>응답 속도와 작업 진행이 중요한 외주 파트너 방식에 맞춰 움직입니다.</span>
+                </div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-num">02</div>
+                <div>
+                  <b>대표 얼굴을 걸고 운영하는 원주 기반 실행사</b>
+                  <span>지역 사회 활동과 실제 운영 이력이 보이는 구조로 신뢰를 쌓고 있습니다.</span>
+                </div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-num">03</div>
+                <div>
+                  <b>트래픽·리뷰 중심의 실전형 서비스</b>
+                  <span>보여주기식 광고보다 노출과 반응의 시작점을 만드는 방식에 집중합니다.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong>3</strong>
+                <span>핵심 서비스</span>
+              </div>
+              <div class="hero-stat">
+                <strong>24/7</strong>
+                <span>온라인 문의 접수</span>
+              </div>
+              <div class="hero-stat">
+                <strong>원주</strong>
+                <span>지역 기반 운영</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">이런 상황에서 문의가 들어옵니다</div>
+            <h2 class="section-title">광고가 안 먹히는 게 아니라<br />흐름이 끊겨 있는 경우가 많습니다</h2>
+            <p class="section-desc">대행사든 중소기업이든 막히는 장면은 비슷합니다. 유입은 약하고, 리뷰는 부족하고, 시작 반응이 없어서 노출이 붙지 않는 상태입니다.</p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <article class="card problem-card">
+            <div class="problem-badge">대행사 고민</div>
+            <h3>클라이언트는 급한데<br />실행사는 느린 상황</h3>
+            <p>응답이 늦고 수정 반영이 느리면 결국 대행사가 먼저 욕을 먹습니다. 외주 파트너는 속도가 먼저입니다.</p>
+          </article>
+          <article class="card problem-card">
+            <div class="problem-badge">플레이스 고민</div>
+            <h3>지도에 뜨긴 뜨는데<br />문의나 방문이 약한 매장</h3>
+            <p>노출만으로는 부족합니다. 실제 클릭과 신뢰를 만드는 리뷰 흐름까지 같이 움직여야 합니다.</p>
+          </article>
+          <article class="card problem-card">
+            <div class="problem-badge">스토어 고민</div>
+            <h3>상품은 많은데<br />검색과 찜이 안 붙는 스토어</h3>
+            <p>스토어는 처음 반응이 너무 약하면 좋은 상품도 묻힙니다. 시작 신호를 만들어주는 작업이 필요합니다.</p>
+          </article>
+          <article class="card problem-card">
+            <div class="problem-badge">셀프 마케팅 고민</div>
+            <h3>콘텐츠는 올리는데<br />좋아요와 조회가 멈춘 계정</h3>
+            <p>문제가 콘텐츠만은 아닙니다. 첫 반응이 너무 약하면 노출이 이어지지 않는 경우가 많습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">회사소개</div>
+            <h2 class="section-title">얼굴을 내밀고 일하는<br />원주 기반 마케팅 실행사입니다</h2>
+            <p class="section-desc">말만 번지르르한 마케팅 회사가 아니라, 지역에서 얼굴 걸고 활동하고 직접 실무와 영업을 같이 보는 구조입니다. 그래서 대응, 책임, 신뢰를 더 중요하게 봅니다.</p>
+          </div>
+        </div>
+
+        <div class="company-wrap">
+          <article class="card portrait-card">
+            <div class="portrait-visual"></div>
+            <div class="portrait-fallback"></div>
+            <div class="portrait-overlay">
+              <div class="eyebrow">대표자 소개</div>
+              <h3>현장에서 바로 쓰는 실행 중심 마케팅</h3>
+              <p>대표자의 실제 영업 경험과 지역 활동을 기반으로, 결과 중심의 구조를 설계하고 운영합니다.</p>
+            </div>
+          </article>
+
+          <div class="company-copy">
+            <article class="card">
+              <h3>대표 소개</h3>
+              <p>
+                저희는 단순히 광고만 돌리는 회사가 아닙니다. 대행사와 중소기업이 실제로 필요로 하는 반응이 무엇인지,
+                어디서 막히는지, 어떤 작업이 먼저 들어가야 하는지 현장 기준으로 판단합니다. 그래서 설명보다 실행,
+                보고서보다 결과 흐름을 더 중요하게 봅니다.
+              </p>
+            </article>
+
+            <div class="quote-box">
+              “원주에서 얼굴 걸고 활동하는 사람이라 더 신중하게 일합니다. 결국 마케팅도 사람이 맡기는 일이라, 신뢰가 먼저라고 생각합니다.”
+            </div>
+
+            <div class="trust-grid">
+              <div class="trust-item">
+                <div class="icon">📍</div>
+                <h4>원주 기반 운영</h4>
+                <p>지역에서 실제로 활동하며 도망치지 않는 구조로 운영합니다. 얼굴이 보이는 실행사가 주는 안정감이 있습니다.</p>
+              </div>
+              <div class="trust-item">
+                <div class="icon">🤝</div>
+                <h4>원청협 활동</h4>
+                <p>원주청년소상공인협회 활동을 통해 지역 소상공인과 가까이 움직이며 현장 이야기를 직접 듣고 있습니다.</p>
+              </div>
+              <div class="trust-item">
+                <div class="icon">🌐</div>
+                <h4>로타리 활동</h4>
+                <p>지역사회와 연결된 활동 이력을 바탕으로, 관계와 신뢰를 가볍게 보지 않는 운영 철학을 유지하고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-grid" style="margin-top: 24px;">
+          <div class="photo-box">
+            <img src="./assets/wonju-activity-1.jpg" alt="원주 지역 활동 사진 1" />
+            <div class="label">원주 지역 활동</div>
+          </div>
+          <div class="photo-box">
+            <img src="./assets/wonju-activity-2.jpg" alt="원청협 활동 사진" />
+            <div class="label">원청협 활동</div>
+          </div>
+          <div class="photo-box">
+            <img src="./assets/rotary-activity.jpg" alt="로타리 활동 사진" />
+            <div class="label">로타리 활동</div>
+          </div>
+        </div>
+        <p class="small-note">위 사진 3장은 실제 사진으로 교체해 주세요. GitHub 업로드 시 <code>assets</code> 폴더에 같은 파일명으로 넣으면 바로 적용됩니다.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">핵심 서비스</div>
+            <h2 class="section-title">서비스는 3개만 정확하게<br />트래픽과 리뷰 흐름에 집중합니다</h2>
+            <p class="section-desc">처음부터 이것저것 다 하는 척하지 않습니다. 네이버 플레이스, 쇼핑 스토어, 셀프 마케팅. 이 3가지에 집중해서 실제 반응이 움직이는 구조를 만듭니다.</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="card service-card">
+            <div class="service-num">01</div>
+            <h3>네이버 플레이스</h3>
+            <p>지도에서 보이고, 클릭되고, 믿게 만드는 흐름을 설계합니다. 단순 노출보다 리뷰와 방문 가능성까지 같이 봅니다.</p>
+            <ul>
+              <l
