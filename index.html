@@ -1499,4 +1499,130 @@
                 <b>대표번호</b>
                 <span>1588-9097</span>
               </div>
-              <d
+                           <div class="contact-line">
+                <b>카카오채널</b>
+                <span>pf.kakao.com/_eTSAn</span>
+              </div>
+              <div class="contact-line">
+                <b>운영기반</b>
+                <span>강원특별자치도 원주</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-wrap">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <div class="form-grid">
+                <input class="field" type="text" name="company" placeholder="업체명 / 대행사명" required />
+                <input class="field" type="text" name="name" placeholder="담당자명" required />
+                <input class="field" type="tel" name="phone" placeholder="연락처" required />
+                <select name="service" required>
+                  <option value="">관심 서비스 선택</option>
+                  <option value="네이버 플레이스">네이버 플레이스</option>
+                  <option value="쇼핑 스토어">쇼핑 스토어</option>
+                  <option value="셀프 마케팅">셀프 마케팅</option>
+                  <option value="대행사 외주 파트너">대행사 외주 파트너</option>
+                </select>
+                <input class="field full" type="text" name="channel" placeholder="현재 운영 중인 채널 또는 사이트 URL" />
+                <textarea class="full" name="message" placeholder="현재 어떤 부분이 막혀 있는지 간단히 적어주세요"></textarea>
+              </div>
+
+              <label class="agree">
+                <input type="checkbox" required />
+                <span>개인정보 수집 및 문의 응대 목적에 동의합니다.</span>
+              </label>
+
+              <button class="btn btn-primary full" type="submit">상담 문의 보내기</button>
+            </form>
+
+            <div class="notice">
+              GitHub Pages에서는 서버 저장이 안 됩니다.  
+              문의폼은 Formspree / EmailJS / 구글폼 중 하나로 연결해서 사용하세요.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">깐부파트너스</div>
+        <p>트래픽·리뷰 전문 마케팅 실행사</p>
+        <p>
+          네이버 플레이스, 쇼핑 스토어, 셀프 마케팅 중심으로
+          대행사와 중소기업이 바로 맡길 수 있는 실행 구조를 제공합니다.
+        </p>
+        <div class="copy">© 2026 깐부파트너스. All rights reserved.</div>
+      </div>
+
+      <div>
+        <div class="footer-title">바로가기</div>
+        <ul>
+          <li><a href="#about">회사소개</a></li>
+          <li><a href="#services">서비스</a></li>
+          <li><a href="#cases">포트폴리오</a></li>
+          <li><a href="#contact">문의하기</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">회사정보</div>
+        <p>대표자 : 이종현</p>
+        <p>대표번호 : 1588-9097</p>
+        <p>카카오채널 : pf.kakao.com/_eTSAn</p>
+        <p>운영기반 : 강원특별자치도 원주</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="top-float" id="topFloat" aria-label="맨 위로 이동">↑</button>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const topFloat = document.getElementById('topFloat');
+    const mobileLinks = mobilePanel.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('menu-open');
+      mobilePanel.classList.toggle('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+        mobilePanel.classList.remove('active');
+      });
+    });
+
+    topFloat.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        const parent = img.parentElement;
+        img.style.display = 'none';
+
+        if (parent && parent.classList.contains('case-thumb')) {
+          const fallback = parent.querySelector('.fallback');
+          if (fallback) fallback.style.display = 'grid';
+        }
+
+        if (parent && parent.classList.contains('photo-box')) {
+          parent.style.background = 'linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%)';
+        }
+
+        if (parent && parent.classList.contains('portrait-card')) {
+          const visual = parent.querySelector('.portrait-visual');
+          const fallback = parent.querySelector('.portrait-fallback');
+          if (visual) visual.style.display = 'none';
+          if (fallback) fallback.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
