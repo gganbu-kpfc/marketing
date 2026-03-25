@@ -4,129 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>깐부파트너스 | 트래픽·리뷰 전문 마케팅 실행사</title>
-  <meta name="description" content="네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 대행사와 중소기업이 바로 맡길 수 있는 트래픽·리뷰 전문 마케팅 실행사" />
-  <script>document.documentElement.classList.add('js');</script>
+  <meta name="description" content="대행사와 중소기업이 바로 맡길 수 있는 실행 중심 마케팅. 보고서 마케팅부터 네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지 실제 반응을 만드는 실행사." />
   <style>
     :root {
       --navy: #0c1d3a;
+      --navy-2: #12284d;
       --blue: #1f6fff;
       --blue-dark: #1457d6;
-      --sky: #f3f8ff;
+      --green: #03c75a;
+      --green-dark: #00a14b;
+      --red: #ff3b30;
+      --mint: #14b8a6;
+      --amber: #f59e0b;
+      --soft: #f7f8fa;
+      --soft-blue: #eef5ff;
+      --line: #e7edf5;
       --text: #111827;
-      --sub: #667085;
-      --line: #e5e7eb;
+      --sub: #344054;
       --white: #ffffff;
-      --bg: #f8fafc;
-      --max: 1200px;
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --shadow-lg: 0 24px 60px rgba(12, 29, 58, 0.12);
-      --shadow-md: 0 16px 32px rgba(12, 29, 58, 0.08);
+      --shadow-sm: 0 12px 30px rgba(12, 29, 58, 0.06);
+      --shadow-md: 0 22px 54px rgba(12, 29, 58, 0.12);
+      --shadow-lg: 0 30px 70px rgba(12, 29, 58, 0.18);
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 36px;
+      --max: 1240px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
+      background: #fff;
+      line-height: 1.75;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body.menu-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, input, textarea, select { font: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .section { padding: 96px 0; }
-    .section.alt { background: var(--bg); }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--sky);
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 42px;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 52px);
-      line-height: 1.16;
-      letter-spacing: -0.04em;
-      color: var(--navy);
-    }
-
-    .section-desc {
-      margin: 16px 0 0;
-      color: var(--sub);
-      font-size: 17px;
-      max-width: 700px;
-    }
-
-    .muted { color: var(--sub); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 54px;
-      padding: 0 22px;
-      border-radius: 14px;
-      font-weight: 800;
-      transition: .2s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      color: var(--white);
-      box-shadow: 0 14px 28px rgba(31, 111, 255, 0.24);
-    }
-
-    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
-
-    .btn-outline {
-      border-color: #cfe0ff;
-      color: var(--blue);
-      background: var(--white);
-    }
-
-    .btn-outline:hover { border-color: var(--blue); background: #f8fbff; }
-
-    .topbar {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 1200;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(231,237,245,0.9);
+      transition: box-shadow .2s ease, background .2s ease;
     }
 
-    .nav {
+    .site-header.scrolled {
+      box-shadow: 0 8px 28px rgba(12,29,58,0.08);
+      background: rgba(255,255,255,0.95);
+    }
+
+    .header-inner {
       min-height: 84px;
       display: flex;
       align-items: center;
@@ -137,875 +91,786 @@
     .logo {
       font-size: 24px;
       font-weight: 900;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.04em;
       color: var(--navy);
+      white-space: nowrap;
     }
 
-    .logo span { color: var(--blue); }
+    .logo span {
+      color: var(--blue);
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #334155;
+      gap: 26px;
+      flex-wrap: wrap;
     }
 
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 800;
+      color: #334155;
+      transition: color .2s ease;
+    }
 
-    .nav-actions {
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue);
+    }
+
+    .header-actions {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .menu-toggle {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      padding: 0;
+    .btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
       cursor: pointer;
     }
 
-    .menu-toggle span,
-    .menu-toggle::before,
-    .menu-toggle::after {
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn::after {
       content: "";
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--navy);
-      border-radius: 999px;
-      transition: .2s ease;
       position: absolute;
+      top: 0;
+      left: -120%;
+      width: 120%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transition: left .6s ease;
     }
 
-    .menu-toggle span { transform: translateY(0); }
-    .menu-toggle::before { transform: translateY(-6px); }
-    .menu-toggle::after { transform: translateY(6px); }
-    .menu-toggle { position: relative; }
-
-    .menu-open .menu-toggle span { opacity: 0; }
-    .menu-open .menu-toggle::before { transform: rotate(45deg); }
-    .menu-open .menu-toggle::after { transform: rotate(-45deg); }
-
-    .mobile-panel {
-      position: fixed;
-      inset: 84px 0 0 0;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(12px);
-      padding: 24px 20px 40px;
-      display: none;
-      z-index: 1100;
-      overflow-y: auto;
+    .btn:hover::after {
+      left: 120%;
     }
 
-    .mobile-panel a {
-      display: block;
-      padding: 14px 0;
-      font-size: 18px;
-      font-weight: 800;
-      border-bottom: 1px solid #eef2f7;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(31,111,255,0.20);
     }
 
-    .mobile-panel .btn { width: 100%; margin-top: 16px; }
+    .btn-outline {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid #dbe4f0;
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(3,199,90,0.20);
+    }
 
     .hero {
       position: relative;
       overflow: hidden;
+      padding: 132px 0 92px;
       background:
-        radial-gradient(circle at 90% 10%, rgba(31,111,255,0.15), transparent 22%),
-        radial-gradient(circle at 0% 20%, rgba(31,111,255,0.12), transparent 20%),
-        linear-gradient(180deg, #f7fbff 0%, #ffffff 55%);
-      padding: 84px 0 70px;
+        radial-gradient(circle at 85% 12%, rgba(20,184,166,0.14), transparent 18%),
+        radial-gradient(circle at 10% 0%, rgba(31,111,255,0.12), transparent 20%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+      border-bottom: 1px solid rgba(31,111,255,0.08);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
-      gap: 34px;
+      gap: 28px;
       align-items: center;
     }
 
-    .hero-copy .eyebrow { margin-bottom: 20px; }
-
-    .hero-title {
-      margin: 0;
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1.06;
-      letter-spacing: -0.06em;
-      color: var(--navy);
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
     }
 
-    .hero-title strong { color: var(--blue); }
+    .hero h1 {
+      font-size: clamp(44px, 5vw, 76px);
+      line-height: 1.03;
+      letter-spacing: -0.06em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
 
-    .hero-desc {
-      margin: 22px 0 0;
-      color: #475467;
-      font-size: 18px;
-      max-width: 670px;
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--sub);
+      max-width: 780px;
+      margin-bottom: 28px;
     }
 
     .hero-actions {
-      margin-top: 30px;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 22px;
     }
 
-    .hero-badges {
-      margin-top: 28px;
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .badge {
+    .hero-tags span {
       display: inline-flex;
       align-items: center;
-      min-height: 42px;
-      padding: 0 14px;
+      padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid #d9e6ff;
-      background: rgba(255,255,255,0.82);
-      color: #2158bf;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid #dbe4f0;
+      color: var(--blue);
       font-size: 14px;
       font-weight: 800;
     }
 
     .hero-panel {
-      background: var(--white);
-      border: 1px solid rgba(229,231,235,0.9);
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 78%);
+      color: white;
       border-radius: 34px;
+      padding: 30px;
       box-shadow: var(--shadow-lg);
+      position: relative;
       overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.10), transparent 24%);
+      pointer-events: none;
+    }
+
+    .hero-panel > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-panel-top {
-      padding: 28px;
-      color: var(--white);
-      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+      margin-bottom: 20px;
     }
 
-    .hero-panel-top h3 {
-      margin: 0 0 10px;
-      font-size: 30px;
+    .hero-panel-top strong {
+      display: block;
+      font-size: 28px;
       line-height: 1.2;
       letter-spacing: -0.04em;
+      margin-bottom: 8px;
     }
 
     .hero-panel-top p {
+      color: rgba(255,255,255,0.90);
+      font-size: 16px;
       margin: 0;
-      color: rgba(255,255,255,0.82);
-      font-size: 15px;
     }
 
-    .hero-panel-body { padding: 24px; }
-
-    .mini-cards {
+    .hero-panel-list {
       display: grid;
       gap: 14px;
     }
 
-    .mini-card {
-      display: flex;
+    .hero-panel-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
       gap: 14px;
-      align-items: flex-start;
-      border: 1px solid var(--line);
-      border-radius: 18px;
+      align-items: center;
       padding: 16px;
-      background: #fff;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .mini-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: var(--sky);
-      color: var(--blue);
-      font-weight: 900;
+    .hero-panel-num {
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      flex: none;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
     }
 
-    .mini-card b {
-      display: block;
+    .hero-panel-item h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      color: white;
       margin-bottom: 4px;
-      font-size: 15px;
-    }
-
-    .mini-card span { color: var(--sub); font-size: 14px; }
-
-    .hero-stats {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .hero-stat {
-      padding: 18px 14px;
-      background: #f8fbff;
-      border: 1px solid #e4edff;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 26px;
-      line-height: 1.05;
-      color: var(--navy);
-      margin-bottom: 6px;
       letter-spacing: -0.03em;
     }
 
-    .hero-stat span { font-size: 13px; font-weight: 700; color: var(--sub); }
+    .hero-panel-item p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.86);
+      margin: 0;
+    }
 
-    .grid-3,
-    .grid-4,
-    .grid-2,
-    .service-grid,
-    .case-grid,
-    .logo-grid,
-    .contact-grid,
-    .footer-grid,
-    .faq-grid,
-    .photo-grid,
-    .trust-grid,
-    .process-grid {
+    .video-section {
+      padding: 28px 0 0;
+      background: #fff;
+    }
+
+    .video-wrap {
+      margin-top: -34px;
       display: grid;
-      gap: 22px;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .card h3,
-    .card h4 { margin: 0 0 12px; letter-spacing: -0.03em; }
-    .card p { margin: 0; color: var(--sub); }
-
-    .problem-card {
-      min-height: 210px;
-      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-    }
-
-    .problem-badge {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--sky);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 16px;
-    }
-
-    .company-wrap {
-      display: grid;
-      grid-template-columns: 0.96fr 1.04fr;
-      gap: 24px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
       align-items: stretch;
     }
 
-    .portrait-card {
-      overflow: hidden;
-      padding: 0;
-      position: relative;
-      min-height: 640px;
-    }
-
-    .portrait-visual {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(12,29,58,0.2), rgba(12,29,58,0.55)),
-        url('./assets/representative.jpg') center/cover no-repeat;
-    }
-
-    .portrait-fallback {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
-      display: none;
-    }
-
-    .portrait-overlay {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      color: var(--white);
-    }
-
-    .portrait-overlay .eyebrow {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      width: fit-content;
-    }
-
-    .portrait-overlay h3 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 3vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-    }
-
-    .portrait-overlay p { margin: 0; color: rgba(255,255,255,0.82); }
-
-    .company-copy {
-      display: grid;
-      gap: 22px;
-    }
-
-    .company-copy .card {
-      box-shadow: none;
-    }
-
-    .quote-box {
-      padding: 22px 24px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 100%);
-      border: 1px solid #dbe7ff;
-      font-weight: 800;
-      color: var(--navy);
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .trust-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .trust-item {
-      padding: 24px;
-      border-radius: 20px;
-      border: 1px solid var(--line);
+    .video-card {
       background: #fff;
-    }
-
-    .trust-item .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: var(--sky);
-      color: var(--blue);
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-
-    .photo-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .photo-box {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      border-radius: 24px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
-      border: 1px solid #d9e6ff;
-    }
-
-    .photo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-box .label {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(12,29,58,0.8);
-      color: white;
-      font-size: 13px;
-      font-weight: 800;
-      backdrop-filter: blur(8px);
-    }
-
-    .service-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .service-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 350px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    }
-
-    .service-card::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 160px;
-      height: 160px;
-      border-radius: 999px;
-      background: rgba(31,111,255,0.08);
-    }
-
-    .service-num {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: var(--sky);
-      color: var(--blue);
-      font-size: 18px;
-      font-weight: 900;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-card h3 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-card p,
-    .service-card ul,
-    .service-card .tag-row {
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-card ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
-      color: #334155;
-    }
-
-    .service-card li { margin-bottom: 8px; }
-
-    .tag-row {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: #eef4ff;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .dark-band {
-      background: #0b1324;
-      border-radius: 38px;
-      color: white;
-      padding: 56px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .dark-band .section-title,
-    .dark-band .section-desc { color: white; }
-    .dark-band .section-desc { color: rgba(255,255,255,0.74); }
-
-    .dark-cards {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .dark-card {
-      padding: 24px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-    }
-
-    .dark-card .num {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(31,111,255,0.22);
-      color: white;
-      font-weight: 900;
-      margin-bottom: 16px;
-    }
-
-    .dark-card h3 { margin: 0 0 10px; font-size: 24px; }
-    .dark-card p { margin: 0; color: rgba(255,255,255,0.76); }
-
-    .logo-grid {
-      margin-top: 38px;
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .logo-item {
-      min-height: 100px;
-      border-radius: 22px;
       border: 1px solid var(--line);
-      background: white;
-      display: grid;
-      place-items: center;
-      padding: 16px;
-      font-weight: 900;
-      color: #334155;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .case-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .case-card { overflow: hidden; padding: 0; }
-
-    .case-thumb {
-      aspect-ratio: 16 / 10;
-      position: relative;
-      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+      border-radius: 34px;
       overflow: hidden;
-    }
-
-    .case-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .case-thumb .fallback {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .case-body { padding: 24px; }
-
-    .case-badge {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--sky);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .case-body h3 {
-      margin: 0 0 10px;
-      font-size: 23px;
-      line-height: 1.3;
-    }
-
-    .case-body ul {
-      margin: 16px 0 0;
-      padding-left: 18px;
-      color: #334155;
-      font-size: 14px;
-    }
-
-    .process-grid { grid-template-columns: repeat(4, 1fr); }
-
-    .process-card {
-      position: relative;
-      min-height: 210px;
-      background: #fff;
-    }
-
-    .step-label {
-      display: inline-flex;
-      margin-bottom: 16px;
-      color: var(--blue);
-      font-weight: 900;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-    }
-
-    .faq-grid { grid-template-columns: repeat(2, 1fr); }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--navy);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item details { border-radius: 22px; }
-    .faq-item .answer {
-      margin-top: 14px;
-      color: var(--sub);
-      font-size: 15px;
-    }
-
-    .faq-item .plus {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: var(--sky);
-      color: var(--blue);
-      flex: none;
-      font-size: 18px;
-      line-height: 1;
-    }
-
-    .contact-grid { grid-template-columns: 0.94fr 1.06fr; }
-
-    .contact-panel {
-      padding: 34px;
-      border-radius: 30px;
-      color: white;
-      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .contact-panel h3 {
-      margin: 0 0 12px;
-      font-size: 36px;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-    }
-
-    .contact-panel p {
-      margin: 0 0 24px;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .contact-lines {
-      display: grid;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .contact-line {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-line b {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-
-    .contact-line span { font-size: 17px; font-weight: 800; }
-
-    .form-wrap {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 32px;
       box-shadow: var(--shadow-md);
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    .video-card-head {
+      padding: 24px 24px 16px;
     }
 
-    .field,
-    textarea,
-    select {
-      width: 100%;
-      min-height: 54px;
-      border-radius: 14px;
-      border: 1px solid #d0d5dd;
-      padding: 14px 16px;
-      color: var(--text);
-      background: white;
-      outline: none;
-      transition: .2s ease;
-    }
-
-    textarea { min-height: 150px; resize: vertical; }
-
-    .field:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 4px rgba(31,111,255,0.08);
-    }
-
-    .full { grid-column: 1 / -1; }
-
-    .agree {
-      display: flex;
+    .video-card-head .mini-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin: 8px 0 20px;
-      color: var(--sub);
-      font-size: 14px;
-    }
-
-    .agree input { width: 18px; height: 18px; }
-
-    .notice {
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 18px;
-      background: #f8fbff;
-      color: #2c4a84;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .footer {
-      margin-top: 96px;
-      padding: 42px 0 56px;
-      border-top: 1px solid var(--line);
-      background: #f8fafc;
-    }
-
-    .footer-grid { grid-template-columns: 1.2fr 0.7fr 0.9fr; }
-
-    .footer-title {
-      font-size: 22px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ffefef;
+      color: #d91f14;
+      font-size: 13px;
       font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .video-card-head h2 {
+      font-size: 30px;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .video-card-head p {
+      font-size: 16px;
+      color: var(--sub);
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-card-foot {
+      padding: 20px 24px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .video-card-foot p {
+      font-size: 15px;
+      color: var(--sub);
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .broadcast-card {
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 82%);
+      color: white;
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .broadcast-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.12), transparent 24%);
+      pointer-events: none;
+    }
+
+    .broadcast-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .broadcast-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .broadcast-card h3 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .broadcast-card p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.90);
+      margin-bottom: 18px;
+    }
+
+    .broadcast-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .broadcast-point {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .broadcast-point strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .broadcast-point span {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
+    }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .section-sub {
+      max-width: 840px;
+      color: var(--sub);
+      font-size: 19px;
+      margin-bottom: 42px;
+    }
+
+    .hook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .hook-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .hook-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    }
+
+    .hook-card h3 {
+      font-size: 30px;
+      line-height: 1.15;
       letter-spacing: -0.04em;
       color: var(--navy);
       margin-bottom: 12px;
     }
 
-    .footer p,
-    .footer li { color: var(--sub); font-size: 14px; }
-    .footer ul { margin: 0; padding-left: 18px; }
-    .copy { margin-top: 22px; color: #98a2b3; font-size: 13px; }
-
-    .top-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 1000;
-      width: 50px;
-      height: 50px;
-      border-radius: 999px;
-      border: 0;
-      background: var(--navy);
-      color: white;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 18px 30px rgba(12, 29, 58, 0.22);
+    .hook-card p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.85;
     }
 
-    .small-note { margin-top: 14px; font-size: 13px; color: #98a2b3; }
+    .mid-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: 58px 52px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.92), rgba(31,111,255,0.88)),
+        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
 
-    @media (max-width: 1100px) {
+    .mid-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.10), transparent 26%);
+      pointer-events: none;
+    }
+
+    .mid-banner > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-banner .section-chip {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .mid-banner h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .mid-banner p {
+      max-width: 840px;
+      color: rgba(255,255,255,0.92);
+      font-size: 18px;
+    }
+
+    .service-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(12,29,58,0.12);
+    }
+
+    .service-num {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .service-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .origin-section {
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 82%);
+      color: white;
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .origin-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.10), transparent 24%);
+      pointer-events: none;
+    }
+
+    .origin-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .origin-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .origin-section h2 {
+      font-size: clamp(36px, 4vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .origin-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .cta-band {
+      padding: 86px 0;
+    }
+
+    .cta-box {
+      border-radius: 38px;
+      padding: 48px 42px;
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 72%, #14b8a6 100%);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-actions .btn-outline {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    .site-footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 800;
+      color: #475467;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .header-actions {
+        display: none;
+      }
+
       .hero-grid,
-      .company-wrap,
-      .contact-grid,
-      .section-head,
-      .content-stack {
+      .video-wrap,
+      .hook-grid,
+      .service-overview {
         grid-template-columns: 1fr;
       }
 
-      .section-head { align-items: start; }
-      .grid-4,
-      .dark-cards,
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .service-grid,
-      .case-grid,
-      .grid-3,
-      .trust-grid,
-      .photo-grid,
-      .logo-grid,
-      .footer-grid,
-      .faq-grid { grid-template-columns: repeat(2, 1fr); }
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        padding: 92px 0 72px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .mid-banner,
+      .cta-box {
+        padding: 36px 28px;
+        border-radius: 28px;
+      }
+
+      .video-wrap {
+        margin-top: -22px;
+      }
     }
 
-    @media (max-width: 860px) {
-      .nav-links,
-      .nav-actions .btn-outline,
-      .nav-actions .btn-primary { display: none; }
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px;
+      }
 
-      .menu-toggle { display: inline-flex; }
-      .mobile-panel.active { display: block; }
+      .hero h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
 
-      .hero { padding-top: 58px; }
-      .hero-stats,
-      .form-grid,
-      .grid-2,
-      .service-grid,
-      .case-grid,
-      .grid-3,
-      .grid-4,
-      .dark-cards,
-      .process-grid,
-      .trust-grid,
-      .photo-grid,
-      .logo-grid,
-      .contact-grid,
-      .footer-grid,
-      .faq-grid { grid-template-columns: 1fr; }
+      .section-title,
+      .mid-banner h2,
+      .origin-section h2 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
 
-      .section { padding: 72px 0; }
-      .dark-band { padding: 34px 24px; border-radius: 28px; }
-      .hero-panel-top h3 { font-size: 25px; }
-      .contact-panel h3 { font-size: 30px; }
-      .portrait-card { min-height: 520px; }
-      .mobile-panel { inset-top: 84px; }
-    }
+      .section-sub,
+      .hero p,
+      .mid-banner p,
+      .origin-section p {
+        font-size: 17px;
+      }
 
-    @media (max-width: 560px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
-      .nav { min-height: 74px; }
-      .hero-title { font-size: 40px; }
-      .hero-desc { font-size: 16px; }
-      .section-title { font-size: 30px; }
-      .card,
-      .form-wrap,
-      .contact-panel,
-      .portrait-overlay { padding: 22px; }
-      .hero-panel-body { padding: 18px; }
-      .hero-panel-top { padding: 22px; }
-      .hero-stat strong { font-size: 22px; }
-      .btn { width: 100%; }
-      .hero-actions { flex-direction: column; }
-      .top-float { right: 14px; bottom: 14px; }
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a href="#home" class="logo">깐부<span>파트너스</span></a>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="https://gganbu-kpfc.github.io/marketing/index.html" class="logo">깐부<span>파트너스</span></a>
 
       <nav class="nav-links">
         <a href="https://gganbu-kpfc.github.io/marketing/about.html">회사소개</a>
@@ -1015,97 +880,69 @@
         <a href="https://gganbu-kpfc.github.io/marketing/contact.html">문의하기</a>
       </nav>
 
-      <div class="nav-actions">
-        <a href="#cases" class="btn btn-outline">작업 사례 보기</a>
-        <a href="#contact" class="btn btn-primary">상담 신청</a>
+      <div class="header-actions">
+        <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
+        <a href="https://gganbu-kpfc.github.io/marketing/contact.html" class="btn btn-primary">상담 신청</a>
       </div>
-
-      <button class="menu-toggle" type="button" aria-label="메뉴 열기" id="menuToggle">
-        <span></span>
-      </button>
     </div>
   </header>
 
-  <div class="mobile-panel" id="mobilePanel">
-    <div class="container">
-      <a href="#about">회사소개</a>
-      <a href="#services">서비스</a>
-      <a href="#strength">강점</a>
-      <a href="#cases">포트폴리오</a>
-      <a href="#process">진행방식</a>
-      <a href="#contact">문의하기</a>
-      <a href="#contact" class="btn btn-primary">무료 상담 신청</a>
-    </div>
-  </div>
-
   <main>
-    <section class="hero" id="home">
+    <!-- hero -->
+    <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">트래픽·리뷰 전문 마케팅 실행사</div>
-          <h1 class="hero-title">
-            대행사와 중소기업이 바로 맡길 수 있는<br />
-            <strong>실행 중심 마케팅</strong>
+        <div class="reveal">
+          <span class="hero-badge">트래픽·리뷰 전문 마케팅 실행사</span>
+          <h1>
+            보고서만 많은 마케팅 말고<br />
+            <span>문의가 남는 흐름</span>을 만듭니다
           </h1>
-          <p class="hero-desc">
-            네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 보고서만 많은 대행이 아니라 실제로 유입과 반응이 움직이게 만드는 실행 구조에 집중합니다.
+          <p>
+            대행사와 중소기업이 바로 맡길 수 있는 실행 구조.  
+            말이 아니라, 클릭·저장·문의까지 이어지는 실제 반응을 만드는 데 집중합니다.
           </p>
 
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">지금 작업 가능 여부 확인</a>
-            <a href="#about" class="btn btn-outline">회사소개 보기</a>
+            <a href="https://gganbu-kpfc.github.io/marketing/contact.html" class="btn btn-primary">보고서 마케팅 문의하기</a>
+            <a href="tel:1588-9097" class="btn btn-green">1588-9097</a>
           </div>
 
-          <div class="hero-badges">
-            <span class="badge">네이버 플레이스</span>
-            <span class="badge">쇼핑 스토어</span>
-            <span class="badge">셀프 마케팅</span>
-            <span class="badge">대행사 외주 파트너 가능</span>
+          <div class="hero-tags">
+            <span>네이버 플레이스</span>
+            <span>쇼핑 스토어</span>
+            <span>셀프 마케팅</span>
+            <span>대행사 외주 파트너 가능</span>
           </div>
         </div>
 
-        <div class="hero-panel">
+        <div class="hero-panel reveal">
           <div class="hero-panel-top">
-            <h3>문의가 남는 구조는<br />보기보다 단순합니다</h3>
-            <p>유입 흐름, 리뷰 신뢰, 시작 반응. 이 3개가 맞물리면 매장은 조용히 바뀝니다.</p>
+            <strong>광고보다 먼저 봐야 하는 건<br />끊긴 흐름입니다</strong>
+            <p>유입은 약하고, 리뷰는 부족하고, 시작 반응이 없어서 문의가 안 남는 경우가 대부분입니다.</p>
           </div>
-          <div class="hero-panel-body">
-            <div class="mini-cards">
-              <div class="mini-card">
-                <div class="mini-num">01</div>
-                <div>
-                  <b>대행사에서 바로 맡길 수 있는 실행 구조</b>
-                  <span>응답 속도와 작업 진행이 중요한 외주 파트너 방식에 맞춰 움직입니다.</span>
-                </div>
-              </div>
-              <div class="mini-card">
-                <div class="mini-num">02</div>
-                <div>
-                  <b>대표 얼굴을 걸고 운영하는 원주 기반 실행사</b>
-                  <span>지역 사회 활동과 실제 운영 이력이 보이는 구조로 신뢰를 쌓고 있습니다.</span>
-                </div>
-              </div>
-              <div class="mini-card">
-                <div class="mini-num">03</div>
-                <div>
-                  <b>트래픽·리뷰 중심의 실전형 서비스</b>
-                  <span>보여주기식 광고보다 노출과 반응의 시작점을 만드는 방식에 집중합니다.</span>
-                </div>
+
+          <div class="hero-panel-list">
+            <div class="hero-panel-item">
+              <div class="hero-panel-num">01</div>
+              <div>
+                <h3>보고서만 예쁘게 만들지 않습니다</h3>
+                <p>대표가 진짜 궁금한 건 “그래서 뭐부터 해야 하냐” 입니다.</p>
               </div>
             </div>
 
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <strong>3</strong>
-                <span>핵심 서비스</span>
+            <div class="hero-panel-item">
+              <div class="hero-panel-num">02</div>
+              <div>
+                <h3>대행사 외주 구조에 맞춰 움직입니다</h3>
+                <p>응답, 일정, 수정 반영까지 안 꼬이게 가는 구조를 더 중요하게 봅니다.</p>
               </div>
-              <div class="hero-stat">
-                <strong>24/7</strong>
-                <span>온라인 문의 접수</span>
-              </div>
-              <div class="hero-stat">
-                <strong>원주</strong>
-                <span>지역 기반 운영</span>
+            </div>
+
+            <div class="hero-panel-item">
+              <div class="hero-panel-num">03</div>
+              <div>
+                <h3>원주에서 얼굴 걸고 운영합니다</h3>
+                <p>강남 빌딩숲에 숨지 않고 직접 활동하고 직접 책임지는 구조를 택했습니다.</p>
               </div>
             </div>
           </div>
@@ -1113,517 +950,236 @@
       </div>
     </section>
 
-    <section class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">이런 상황에서 문의가 들어옵니다</div>
-            <h2 class="section-title">광고가 안 먹히는 게 아니라<br />흐름이 끊겨 있는 경우가 많습니다</h2>
-            <p class="section-desc">대행사든 중소기업이든 막히는 장면은 비슷합니다. 유입은 약하고, 리뷰는 부족하고, 시작 반응이 없어서 노출이 붙지 않는 상태입니다.</p>
+    <!-- video section -->
+    <section class="video-section">
+      <div class="container video-wrap">
+        <div class="video-card reveal">
+          <div class="video-card-head">
+            <span class="mini-badge">YOUTUBE</span>
+            <h2>정책자금 전문가 영상</h2>
+            <p>히어로 아래에서 바로 신뢰를 확인할 수 있게 영상 섹션을 따로 뒀습니다.</p>
+          </div>
+
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/sMQfb_6Okrk?autoplay=1&mute=1&loop=1&playlist=sMQfb_6Okrk&controls=1&rel=0"
+              title="정책자금 전문가 영상"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-card-foot">
+            <p>정책자금 전문가로서 실제 방송·콘텐츠에 출연한 영상을 바로 확인할 수 있습니다.</p>
+            <a href="https://youtu.be/sMQfb_6Okrk?si=cfpyK14fq3tJu5MR" target="_blank" class="btn btn-outline">유튜브 바로가기</a>
           </div>
         </div>
 
-        <div class="grid-4">
-          <article class="card problem-card">
-            <div class="problem-badge">대행사 고민</div>
-            <h3>클라이언트는 급한데<br />실행사는 느린 상황</h3>
-            <p>응답이 늦고 수정 반영이 느리면 결국 대행사가 먼저 욕을 먹습니다. 외주 파트너는 속도가 먼저입니다.</p>
+        <div class="broadcast-card reveal">
+          <span class="broadcast-chip">EXPERT POSITION</span>
+          <h3>한국경제방송 · 이데일리TV<br />정책자금 전문가 패널 출연</h3>
+          <p>
+            단순한 마케팅 회사가 아니라,  
+            사업자 흐름과 정책자금 구조를 실제로 보는 전문가 포지션까지 함께 갖춘 구조입니다.
+          </p>
+
+          <div class="broadcast-points">
+            <div class="broadcast-point">
+              <strong>정책자금 전문가 포지션</strong>
+              <span>사업자들이 가장 어려워하는 자금 흐름을 실제 상담 기준으로 풀어내는 시각</span>
+            </div>
+
+            <div class="broadcast-point">
+              <strong>방송 출연 이력 기반 신뢰</strong>
+              <span>단순 자랑이 아니라, 외부에서 검증 가능한 전문가 이미지라는 점이 중요합니다</span>
+            </div>
+
+            <div class="broadcast-point">
+              <strong>마케팅과 사업자 시각을 같이 봅니다</strong>
+              <span>유입만 보는 게 아니라, 대표가 실제로 반응하게 되는 흐름까지 함께 봅니다</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- hook section -->
+    <section class="section">
+      <div class="container">
+        <span class="section-chip reveal">이런 대표님들이 문의합니다</span>
+        <h2 class="section-title reveal">광고가 안 먹히는 게 아니라<br />아예 흐름이 끊겨 있는 경우가 많습니다</h2>
+        <p class="section-sub reveal">
+          플레이스는 보이는데 문의가 없고, 스토어 유입은 있는데 찜이 없고, 콘텐츠는 올리는데 반응이 없습니다.  
+          이건 매체 문제가 아니라, 구조가 안 잡혀 있다는 뜻일 때가 많습니다.
+        </p>
+
+        <div class="hook-grid">
+          <article class="hook-card reveal">
+            <h3>플레이스는 보이는데<br />문의가 없습니다</h3>
+            <p>지도에는 나오는데 고객이 저장도 안 하고, 리뷰도 약해서 방문 전환이 끊기는 상태입니다.</p>
           </article>
-          <article class="card problem-card">
-            <div class="problem-badge">플레이스 고민</div>
-            <h3>지도에 뜨긴 뜨는데<br />문의나 방문이 약한 매장</h3>
-            <p>노출만으로는 부족합니다. 실제 클릭과 신뢰를 만드는 리뷰 흐름까지 같이 움직여야 합니다.</p>
+
+          <article class="hook-card reveal">
+            <h3>스토어 유입은 있는데<br />반응이 없습니다</h3>
+            <p>상품은 괜찮은데 찜과 관심이 부족해서 검색 이후 흐름이 바로 끊기는 경우입니다.</p>
           </article>
-          <article class="card problem-card">
-            <div class="problem-badge">스토어 고민</div>
-            <h3>상품은 많은데<br />검색과 찜이 안 붙는 스토어</h3>
-            <p>스토어는 처음 반응이 너무 약하면 좋은 상품도 묻힙니다. 시작 신호를 만들어주는 작업이 필요합니다.</p>
-          </article>
-          <article class="card problem-card">
-            <div class="problem-badge">셀프 마케팅 고민</div>
-            <h3>콘텐츠는 올리는데<br />좋아요와 조회가 멈춘 계정</h3>
-            <p>문제가 콘텐츠만은 아닙니다. 첫 반응이 너무 약하면 노출이 이어지지 않는 경우가 많습니다.</p>
+
+          <article class="hook-card reveal">
+            <h3>콘텐츠는 올리는데도<br />시작 반응이 없습니다</h3>
+            <p>좋아요, 조회수, 초기 신호가 너무 약해서 알고리즘 앞단에서 밀리는 상태입니다.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <!-- mid banner -->
+    <section class="section-soft section">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">회사소개</div>
-            <h2 class="section-title">얼굴을 내밀고 일하는<br />원주 기반 마케팅 실행사입니다</h2>
-            <p class="section-desc">말만 번지르르한 마케팅 회사가 아니라, 지역에서 얼굴 걸고 활동하고 직접 실무와 영업을 같이 보는 구조입니다. 그래서 대응, 책임, 신뢰를 더 중요하게 봅니다.</p>
-          </div>
+        <div class="mid-banner reveal">
+          <span class="section-chip">강한 한마디</span>
+          <h2>보고서 마케팅은<br />보기 좋게 만드는 작업이 아닙니다</h2>
+          <p>
+            대표님이 진짜 원하는 건 예쁜 분석표가 아니라,  
+            “그래서 뭐부터 손대야 하는지”가 보이는 구조입니다.  
+            저희는 설명보다 먼저 기준을 정리해드리는 방식으로 갑니다.
+          </p>
         </div>
-
-        <div class="company-wrap">
-          <article class="card portrait-card">
-            <div class="portrait-visual"></div>
-            <div class="portrait-fallback"></div>
-            <div class="portrait-overlay">
-              <div class="eyebrow">대표자 소개</div>
-              <h3>현장에서 바로 쓰는 실행 중심 마케팅</h3>
-              <p>대표자의 실제 영업 경험과 지역 활동을 기반으로, 결과 중심의 구조를 설계하고 운영합니다.</p>
-            </div>
-          </article>
-
-          <div class="company-copy">
-            <article class="card">
-              <h3>대표 소개</h3>
-              <p>
-                저희는 단순히 광고만 돌리는 회사가 아닙니다. 대행사와 중소기업이 실제로 필요로 하는 반응이 무엇인지,
-                어디서 막히는지, 어떤 작업이 먼저 들어가야 하는지 현장 기준으로 판단합니다. 그래서 설명보다 실행,
-                보고서보다 결과 흐름을 더 중요하게 봅니다.
-              </p>
-            </article>
-
-            <div class="quote-box">
-              “원주에서 얼굴 걸고 활동하는 사람이라 더 신중하게 일합니다. 결국 마케팅도 사람이 맡기는 일이라, 신뢰가 먼저라고 생각합니다.”
-            </div>
-
-            <div class="trust-grid">
-              <div class="trust-item">
-                <div class="icon">📍</div>
-                <h4>원주 기반 운영</h4>
-                <p>지역에서 실제로 활동하며 도망치지 않는 구조로 운영합니다. 얼굴이 보이는 실행사가 주는 안정감이 있습니다.</p>
-              </div>
-              <div class="trust-item">
-                <div class="icon">🤝</div>
-                <h4>원청협 활동</h4>
-                <p>원주청년소상공인협회 활동을 통해 지역 소상공인과 가까이 움직이며 현장 이야기를 직접 듣고 있습니다.</p>
-              </div>
-              <div class="trust-item">
-                <div class="icon">🌐</div>
-                <h4>로타리 활동</h4>
-                <p>지역사회와 연결된 활동 이력을 바탕으로, 관계와 신뢰를 가볍게 보지 않는 운영 철학을 유지하고 있습니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-grid" style="margin-top: 24px;">
-          <div class="photo-box">
-            <img src="./assets/wonju-activity-1.jpg" alt="원주 지역 활동 사진 1" />
-            <div class="label">원주 지역 활동</div>
-          </div>
-          <div class="photo-box">
-            <img src="./assets/wonju-activity-2.jpg" alt="원청협 활동 사진" />
-            <div class="label">원청협 활동</div>
-          </div>
-          <div class="photo-box">
-            <img src="./assets/rotary-activity.jpg" alt="로타리 활동 사진" />
-            <div class="label">로타리 활동</div>
-          </div>
-        </div>
-        <p class="small-note">위 사진 3장은 실제 사진으로 교체해 주세요. GitHub 업로드 시 <code>assets</code> 폴더에 같은 파일명으로 넣으면 바로 적용됩니다.</p>
       </div>
     </section>
 
-    <section class="section alt" id="services">
+    <!-- services -->
+    <section class="section">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">핵심 서비스</div>
-            <h2 class="section-title">서비스는 3개만 정확하게<br />트래픽과 리뷰 흐름에 집중합니다</h2>
-            <p class="section-desc">처음부터 이것저것 다 하는 척하지 않습니다. 네이버 플레이스, 쇼핑 스토어, 셀프 마케팅. 이 3가지에 집중해서 실제 반응이 움직이는 구조를 만듭니다.</p>
-          </div>
-        </div>
+        <span class="section-chip reveal">핵심 서비스</span>
+        <h2 class="section-title reveal">많이 하는 척보다<br />정확하게 움직이는 3가지만 봅니다</h2>
+        <p class="section-sub reveal">
+          서비스가 많아 보이면 커 보일 수는 있습니다.  
+          그런데 실제로 맡기는 사람 입장에서는 “그래서 뭘 잘하냐”가 더 중요합니다.  
+          그래서 저희는 실제 반응과 연결되는 3가지에 집중합니다.
+        </p>
 
-        <div class="service-grid">
-          <article class="card service-card">
+        <div class="service-overview">
+          <article class="service-card reveal">
             <div class="service-num">01</div>
             <h3>네이버 플레이스</h3>
-            <p>지도에서 보이고, 클릭되고, 믿게 만드는 흐름을 설계합니다. 단순 노출보다 리뷰와 방문 가능성까지 같이 봅니다.</p>
-            <ul>
-              <li>플레이스 트래픽 운영</li>
-              <li>영수증 리뷰/방문 반응 구조</li>
-              <li>찜, 저장, 클릭 흐름 보조</li>
-              <li>업종별 플레이스 방향 제안</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">맛집</span>
-              <span class="tag">병원</span>
-              <span class="tag">미용</span>
-              <span class="tag">로컬 매장</span>
+            <p>노출만 되는 상태가 아니라 클릭, 저장, 리뷰 신뢰까지 이어지는 흐름을 만드는 작업입니다.</p>
+            <div class="service-tags">
+              <span>클릭</span>
+              <span>저장</span>
+              <span>리뷰</span>
+              <span>로컬 매장</span>
             </div>
           </article>
 
-          <article class="card service-card">
+          <article class="service-card reveal">
             <div class="service-num">02</div>
             <h3>쇼핑 스토어</h3>
-            <p>상품이 많은 것보다 먼저 필요한 건 반응의 시작점입니다. 스토어 유입, 찜, 구매 신호가 붙는 방향으로 작업합니다.</p>
-            <ul>
-              <li>쇼핑 스토어 트래픽</li>
-              <li>찜/관심 유도 흐름</li>
-              <li>검색 유입 보조</li>
-              <li>초기 반응이 약한 상품 보강</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">스마트스토어</span>
-              <span class="tag">상품 반응</span>
-              <span class="tag">유입 구조</span>
+            <p>검색 유입 이후 찜과 관심 흐름을 보강해서 전환 앞단을 살리는 구조입니다.</p>
+            <div class="service-tags">
+              <span>찜</span>
+              <span>관심</span>
+              <span>스토어</span>
+              <span>전환 흐름</span>
             </div>
           </article>
 
-          <article class="card service-card">
+          <article class="service-card reveal">
             <div class="service-num">03</div>
             <h3>셀프 마케팅</h3>
-            <p>좋아요, 조회수, 찜, 팔로워 같은 시작 반응을 대표가 직접 선택해 운영할 수 있는 셀프 도구형 서비스입니다.</p>
-            <ul>
-              <li>인스타그램 좋아요/팔로워/조회</li>
-              <li>유튜브 좋아요/조회/구독 보조</li>
-              <li>스토어 찜/관심 신호</li>
-              <li>대표가 직접 사용하는 셀프 방식</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">인스타</span>
-              <span class="tag">유튜브</span>
-              <span class="tag">찜</span>
-              <span class="tag">셀프 운영</span>
+            <p>대표가 직접 반응 신호를 선택해서 빠르게 테스트할 수 있는 도구형 서비스입니다.</p>
+            <div class="service-tags">
+              <span>인스타</span>
+              <span>유튜브</span>
+              <span>좋아요</span>
+              <span>조회수</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="strength">
-      <div class="container">
-        <div class="dark-band">
-          <div class="section-head" style="margin-bottom:0;">
-            <div>
-              <div class="eyebrow" style="background:rgba(255,255,255,0.1); color:white;">왜 맡기는가</div>
-              <h2 class="section-title">대행사와 중소기업이 원하는 건<br />결국 “안 터지는 실행사”입니다</h2>
-              <p class="section-desc">디자인만 예쁜 사이트보다 더 중요한 건 일의 방식입니다. 응답이 빠르고, 요청 의도가 잘 읽히고, 필요한 만큼 정확하게 작업되는 구조여야 다시 맡깁니다.</p>
-            </div>
-          </div>
-
-          <div class="dark-cards">
-            <article class="dark-card">
-              <div class="num">1</div>
-              <h3>빠른 응답</h3>
-              <p>대행사 업무는 타이밍이 중요합니다. 문의와 피드백에 빠르게 반응하는 운영을 기본으로 둡니다.</p>
-            </article>
-            <article class="dark-card">
-              <div class="num">2</div>
-              <h3>실행 중심</h3>
-              <p>말만 많은 제안보다 실제 필요한 작업을 먼저 정리합니다. 설명보다 결과 흐름에 집중합니다.</p>
-            </article>
-            <article class="dark-card">
-              <div class="num">3</div>
-              <h3>업종 이해</h3>
-              <p>매장형 업종, 로컬 업종, 스토어 업종의 차이를 감안해 같은 방식으로 밀어붙이지 않습니다.</p>
-            </article>
-            <article class="dark-card">
-              <div class="num">4</div>
-              <h3>대표 책임</h3>
-              <p>얼굴이 보이는 운영 구조라 가볍게 일하지 않습니다. 사람 보고 맡기는 구조를 중요하게 봅니다.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="section-head" style="margin-top: 42px; margin-bottom: 22px;">
-          <div>
-            <div class="eyebrow">주요 거래 형태</div>
-            <h2 class="section-title">이런 곳에서 바로 연결됩니다</h2>
-            <p class="section-desc">실제 로고로 교체하면 더 좋습니다. 지금은 구조용 박스만 넣어뒀습니다.</p>
-          </div>
-        </div>
-
-        <div class="logo-grid">
-          <div class="logo-item">마케팅 대행사<br />외주 파트너</div>
-          <div class="logo-item">지역 소상공인<br />플레이스 운영</div>
-          <div class="logo-item">중소기업<br />스토어 반응 관리</div>
-          <div class="logo-item">개인 브랜드<br />셀프 마케팅</div>
-          <div class="logo-item">광고주 직접 의뢰<br />리뷰·트래픽 실행</div>
-        </div>
+    <!-- origin -->
+    <section class="origin-section">
+      <div class="container origin-inner">
+        <span class="origin-chip reveal">WONJU BASED</span>
+        <h2 class="reveal">저희는 강남 빌딩숲에 숨어서<br />일하지 않습니다</h2>
+        <p class="reveal">
+          원주에서 얼굴을 내밀고 활동하고,  
+          지역에서 직접 사람을 만나며 운영합니다.
+        </p>
+        <p class="reveal">
+          온라인만 번지르르한 구조보다  
+          누가 운영하는지 보이는 구조가 더 오래 간다고 믿기 때문입니다.
+        </p>
       </div>
     </section>
 
-    <section class="section alt" id="cases">
+    <!-- CTA -->
+    <section class="cta-band">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">포트폴리오</div>
-            <h2 class="section-title">사이트는 예쁘게 만드는 것보다<br />이 장면이 보여야 합니다</h2>
-            <p class="section-desc">숫자를 과장하지 말고, 어떤 업종에 어떤 작업을 했고 무엇이 달라졌는지 장면으로 보여주는 방식이 더 신뢰를 줍니다.</p>
-          </div>
-        </div>
+        <div class="cta-box reveal">
+          <h2>지금 필요한 건 멋진 보고서가 아니라<br />대표님이 바로 써먹을 기준입니다</h2>
+          <p>
+            “지금 우리 업종은 뭐부터 손대야 하냐”  
+            그 질문에 바로 답을 듣고 싶은 분은 문의부터 남겨보세요.
+          </p>
 
-        <div class="case-grid">
-          <article class="card case-card">
-            <div class="case-thumb">
-              <img src="./assets/case-place.jpg" alt="플레이스 운영 사례" />
-              <div class="fallback">네이버 플레이스 사례</div>
-            </div>
-            <div class="case-body">
-              <div class="case-badge">플레이스 운영</div>
-              <h3>지역 매장 검색 노출과 리뷰 흐름 보강</h3>
-              <p>지도에서 보이기만 하는 상태가 아니라 클릭과 신뢰가 붙도록 트래픽과 리뷰 흐름을 같이 정리한 사례입니다.</p>
-              <ul>
-                <li>업종: 로컬 매장</li>
-                <li>작업: 플레이스 트래픽 + 리뷰 흐름</li>
-                <li>포인트: 검색 노출, 클릭, 저장 흐름 보강</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card case-card">
-            <div class="case-thumb">
-              <img src="./assets/case-store.jpg" alt="쇼핑 스토어 사례" />
-              <div class="fallback">쇼핑 스토어 사례</div>
-            </div>
-            <div class="case-body">
-              <div class="case-badge">스토어 반응</div>
-              <h3>찜과 관심 신호가 약한 상품 흐름 보강</h3>
-              <p>상품은 괜찮은데 반응이 약해 묻히는 스토어에 필요한 시작 신호를 만들어주는 방향으로 구성했습니다.</p>
-              <ul>
-                <li>업종: 스마트스토어</li>
-                <li>작업: 유입 보조 + 찜 흐름</li>
-                <li>포인트: 상품 반응의 시작점 확보</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card case-card">
-            <div class="case-thumb">
-              <img src="./assets/case-self.jpg" alt="셀프 마케팅 사례" />
-              <div class="fallback">셀프 마케팅 사례</div>
-            </div>
-            <div class="case-body">
-              <div class="case-badge">셀프 운영</div>
-              <h3>대표가 직접 반응 숫자를 조절하는 도구형 서비스</h3>
-              <p>콘텐츠가 묻히는 상황에서 필요한 반응만 선택해서 직접 운영할 수 있게 구성한 셀프 방식입니다.</p>
-              <ul>
-                <li>채널: 인스타그램 / 유튜브 / 스토어</li>
-                <li>작업: 좋아요, 조회, 팔로워, 찜</li>
-                <li>포인트: 대표가 필요한 만큼 직접 선택</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <p class="small-note">사례 이미지는 실제 작업 캡처로 교체해 주세요. 지금은 구조를 잡기 위한 자리입니다.</p>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">진행 방식</div>
-            <h2 class="section-title">복잡하게 말 안 합니다<br />진행은 이 4단계면 충분합니다</h2>
-            <p class="section-desc">대행사든 광고주든 결국 궁금한 건 같습니다. 어떻게 맡기고, 어느 정도 확인하고, 언제 시작되는지. 그래서 흐름을 단순하게 보여주는 게 좋습니다.</p>
-          </div>
-        </div>
-
-        <div class="process-grid">
-          <article class="card process-card">
-            <div class="step-label">STEP 01</div>
-            <h3>상담 접수</h3>
-            <p>업종, 채널, 현재 막힌 지점을 먼저 받습니다. 대행사라면 클라이언트 상황까지 같이 확인합니다.</p>
-          </article>
-          <article class="card process-card">
-            <div class="step-label">STEP 02</div>
-            <h3>작업 방향 확인</h3>
-            <p>플레이스인지, 스토어인지, 셀프 마케팅인지 가장 먼저 필요한 작업 방향을 정리합니다.</p>
-          </article>
-          <article class="card process-card">
-            <div class="step-label">STEP 03</div>
-            <h3>실행 항목 제안</h3>
-            <p>과하게 묶지 않고 필요한 것만 제안합니다. 예산보다 현재 상황에 맞는 조합이 먼저입니다.</p>
-          </article>
-          <article class="card process-card">
-            <div class="step-label">STEP 04</div>
-            <h3>작업 시작</h3>
-            <p>확정된 범위 안에서 바로 작업을 시작합니다. 반복적으로 설명만 많은 구조를 피합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">자주 묻는 질문</div>
-            <h2 class="section-title">문의 전에 걸리는 반감은<br />여기서 먼저 빼주는 게 좋습니다</h2>
-          </div>
-        </div>
-
-        <div class="faq-grid">
-          <article class="card faq-item">
-            <details open>
-              <summary><span>대행사도 외주 파트너처럼 맡길 수 있나요?</span><span class="plus">+</span></summary>
-              <div class="answer">가능합니다. 실제로 대행사에서 클라이언트 작업을 바로 맡길 수 있게 외주 파트너 구조로 맞춰서 움직일 수 있습니다.</div>
-            </details>
-          </article>
-          <article class="card faq-item">
-            <details>
-              <summary><span>플레이스만 따로 맡길 수도 있나요?</span><span class="plus">+</span></summary>
-              <div class="answer">가능합니다. 처음부터 모든 서비스를 묶지 않고, 필요한 항목만 선택해서 진행하는 구조로 잡을 수 있습니다.</div>
-            </details>
-          </article>
-          <article class="card faq-item">
-            <details>
-              <summary><span>셀프 마케팅은 어떤 채널이 가능한가요?</span><span class="plus">+</span></summary>
-              <div class="answer">인스타그램, 유튜브, 스토어 계열처럼 초기 반응이 중요한 채널 중심으로 운영 가능합니다. 필요한 항목만 선택하는 방식입니다.</div>
-            </details>
-          </article>
-          <article class="card faq-item">
-            <details>
-              <summary><span>원주가 아니어도 진행 가능한가요?</span><span class="plus">+</span></summary>
-              <div class="answer">온라인 기반 서비스라 지역 상관없이 진행 가능합니다. 다만 원주 기반 운영이라는 점은 회사 신뢰를 보여주는 포인트로 가져가면 좋습니다.</div>
-            </details>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">문의하기</div>
-            <h2 class="section-title">광고부터 돌리기 전에<br />지금 막힌 지점부터 확인해보세요</h2>
-            <p class="section-desc">문의는 길게 안 받아도 됩니다. 업종, 채널, 현재 고민만 받아도 방향은 잡힙니다. GitHub Pages 기준으로는 Formspree 또는 EmailJS 연결을 추천합니다.</p>
-          </div>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-panel">
-            <h3>작업 가능 여부부터<br />먼저 확인해드립니다</h3>
-            <p>대행사 외주 문의, 플레이스 운영, 스토어 반응, 셀프 마케팅까지. 현재 필요한 작업이 뭔지 먼저 정리해드립니다.</p>
-
-            <div class="contact-lines">
-              <div class="contact-line">
-                <b>대표번호</b>
-                <span>1588-9097</span>
-              </div>
-                           <div class="contact-line">
-                <b>카카오채널</b>
-                <span>pf.kakao.com/_eTSAn</span>
-              </div>
-              <div class="contact-line">
-                <b>운영기반</b>
-                <span>강원특별자치도 원주</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-wrap">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
-              <div class="form-grid">
-                <input class="field" type="text" name="company" placeholder="업체명 / 대행사명" required />
-                <input class="field" type="text" name="name" placeholder="담당자명" required />
-                <input class="field" type="tel" name="phone" placeholder="연락처" required />
-                <select name="service" required>
-                  <option value="">관심 서비스 선택</option>
-                  <option value="네이버 플레이스">네이버 플레이스</option>
-                  <option value="쇼핑 스토어">쇼핑 스토어</option>
-                  <option value="셀프 마케팅">셀프 마케팅</option>
-                  <option value="대행사 외주 파트너">대행사 외주 파트너</option>
-                </select>
-                <input class="field full" type="text" name="channel" placeholder="현재 운영 중인 채널 또는 사이트 URL" />
-                <textarea class="full" name="message" placeholder="현재 어떤 부분이 막혀 있는지 간단히 적어주세요"></textarea>
-              </div>
-
-              <label class="agree">
-                <input type="checkbox" required />
-                <span>개인정보 수집 및 문의 응대 목적에 동의합니다.</span>
-              </label>
-
-              <button class="btn btn-primary full" type="submit">상담 문의 보내기</button>
-            </form>
-
-            <div class="notice">
-              GitHub Pages에서는 서버 저장이 안 됩니다.  
-              문의폼은 Formspree / EmailJS / 구글폼 중 하나로 연결해서 사용하세요.
-            </div>
+          <div class="cta-actions">
+            <a href="https://gganbu-kpfc.github.io/marketing/contact.html" class="btn btn-primary">보고서 마케팅 문의하기</a>
+            <a href="tel:1588-9097" class="btn btn-outline">1588-9097</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <div>
-        <div class="footer-title">깐부파트너스</div>
-        <p>트래픽·리뷰 전문 마케팅 실행사</p>
-        <p>
-          네이버 플레이스, 쇼핑 스토어, 셀프 마케팅 중심으로
-          대행사와 중소기업이 바로 맡길 수 있는 실행 구조를 제공합니다.
-        </p>
-        <div class="copy">© 2026 깐부파트너스. All rights reserved.</div>
+        <a href="https://gganbu-kpfc.github.io/marketing/index.html" class="logo">깐부<span>파트너스</span></a>
+        <p style="color:#475467; font-size:14px; margin-top:8px;">트래픽·리뷰 전문 마케팅 실행사</p>
       </div>
 
-      <div>
-        <div class="footer-title">바로가기</div>
-        <ul>
-          <li><a href="#about">회사소개</a></li>
-          <li><a href="#services">서비스</a></li>
-          <li><a href="#cases">포트폴리오</a></li>
-          <li><a href="#contact">문의하기</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-title">회사정보</div>
-        <p>대표자 : 이종현</p>
-        <p>대표번호 : 1588-9097</p>
-        <p>카카오채널 : pf.kakao.com/_eTSAn</p>
-        <p>운영기반 : 강원특별자치도 원주</p>
+      <div class="footer-links">
+        <a href="https://gganbu-kpfc.github.io/marketing/about.html">회사소개</a>
+        <a href="https://gganbu-kpfc.github.io/marketing/services.html">서비스</a>
+        <a href="https://gganbu-kpfc.github.io/marketing/strength.html">강점</a>
+        <a href="https://gganbu-kpfc.github.io/marketing/portfolio.html">포트폴리오</a>
+        <a href="https://gganbu-kpfc.github.io/marketing/contact.html">문의하기</a>
       </div>
     </div>
   </footer>
 
-  <button class="top-float" id="topFloat" aria-label="맨 위로 이동">↑</button>
-
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobilePanel = document.getElementById('mobilePanel');
-    const topFloat = document.getElementById('topFloat');
-    const mobileLinks = mobilePanel.querySelectorAll('a');
+    const reveals = document.querySelectorAll('.reveal');
+    const siteHeader = document.getElementById('siteHeader');
 
-    menuToggle.addEventListener('click', () => {
-      document.body.classList.toggle('menu-open');
-      mobilePanel.classList.toggle('active');
-    });
+    function revealOnScroll() {
+      const trigger = window.innerHeight * 0.88;
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        document.body.classList.remove('menu-open');
-        mobilePanel.classList.remove('active');
-      });
-    });
-
-    topFloat.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', () => {
-        const parent = img.parentElement;
-        img.style.display = 'none';
-
-        if (parent && parent.classList.contains('case-thumb')) {
-          const fallback = parent.querySelector('.fallback');
-          if (fallback) fallback.style.display = 'grid';
-        }
-
-        if (parent && parent.classList.contains('photo-box')) {
-          parent.style.background = 'linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%)';
-        }
-
-        if (parent && parent.classList.contains('portrait-card')) {
-          const visual = parent.querySelector('.portrait-visual');
-          const fallback = parent.querySelector('.portrait-fallback');
-          if (visual) visual.style.display = 'none';
-          if (fallback) fallback.style.display = 'block';
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+          el.classList.add('active');
         }
       });
-    });
+    }
+
+    function updateHeader() {
+      if (siteHeader) {
+        if (window.scrollY > 8) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', updateHeader);
+    window.addEventListener('load', revealOnScroll);
+    window.addEventListener('load', updateHeader);
   </script>
 </body>
 </html>
