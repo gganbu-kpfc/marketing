@@ -1,0 +1,136 @@
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(28px);
+}
+
+.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal-up.active,
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+
+.hover-card {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(12,29,58,0.12);
+}
+
+.hover-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hover-image {
+  overflow: hidden;
+}
+
+.hover-image img {
+  transition: transform 0.45s ease;
+}
+
+.hover-image:hover img {
+  transform: scale(1.05);
+}
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.service-detail-grid.reverse {
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.service-visual {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(12,29,58,0.12);
+}
+
+.service-detail-content h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  color: #0c1d3a;
+  margin-bottom: 12px;
+}
+
+.service-lead {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1f6fff;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.feature-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 10px 24px rgba(12,29,58,0.04);
+}
+
+.feature-item h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #0c1d3a;
+}
+
+.feature-item p {
+  color: #667085;
+}
+
+.service-tags {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service-tags span {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1f6fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+  .service-detail-grid,
+  .service-detail-grid.reverse {
+    grid-template-columns: 1fr;
+  }
+}
