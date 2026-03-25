@@ -4,10 +4,489 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>강점 | 깐부파트너스</title>
-  <meta name="description" content="깐부파트너스의 차별점, 운영 방식, 대행사 및 중소기업이 맡기는 이유를 소개합니다." />
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/animation.css" />
+  <meta name="description" content="깐부파트너스의 강점과 운영 기준을 소개합니다." />
+  <style>
+    :root {
+      --navy: #0c1d3a;
+      --navy-2: #12284d;
+      --blue: #1f6fff;
+      --blue-dark: #1457d6;
+      --mint: #14b8a6;
+      --amber: #f59e0b;
+      --soft: #f7f8fa;
+      --soft-blue: #f3f7fd;
+      --line: #e7edf5;
+      --text: #111827;
+      --sub: #344054;
+      --white: #ffffff;
+      --shadow-sm: 0 12px 30px rgba(12, 29, 58, 0.06);
+      --shadow-md: 0 22px 54px rgba(12, 29, 58, 0.12);
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 36px;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.75;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(231,237,245,0.9);
+    }
+
+    .header-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 15px;
+      font-weight: 800;
+      color: #334155;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(31,111,255,0.20);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid #dbe4f0;
+    }
+
+    /* hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 110px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.84), rgba(31,111,255,0.70)),
+        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 85% 10%, rgba(255,255,255,0.08), transparent 22%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 840px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 19px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, #f6f9fd 0%, #eef4fb 100%);
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .section-sub {
+      max-width: 780px;
+      color: var(--sub);
+      font-size: 19px;
+      margin-bottom: 44px;
+    }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    /* top cards */
+    .top-strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .top-strength-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      min-height: 250px;
+    }
+
+    .top-strength-card h3 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .top-strength-card p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .top-strength-card.blue { border-top: 5px solid var(--blue); }
+    .top-strength-card.mint { border-top: 5px solid var(--mint); }
+    .top-strength-card.amber { border-top: 5px solid var(--amber); }
+
+    /* banner */
+    .story-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: 58px 52px;
+      background:
+        linear-gradient(135deg, rgba(12,29,58,0.92), rgba(31,111,255,0.86)),
+        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .story-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.10), transparent 26%);
+      pointer-events: none;
+    }
+
+    .story-banner > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-banner .section-chip {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .story-banner h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .story-banner p {
+      max-width: 860px;
+      font-size: 18px;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.9;
+    }
+
+    /* long rows */
+    .long-strength-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .long-strength-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 24px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 28px 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .long-strength-num {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .long-strength-text h3 {
+      font-size: 30px;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .long-strength-text p {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    /* final dark section */
+    .final-dark {
+      padding: 96px 0;
+      background: linear-gradient(135deg, #07162e 0%, #0c1d3a 100%);
+      color: white;
+    }
+
+    .final-dark .section-chip {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .final-dark .section-title {
+      color: white;
+    }
+
+    .final-dark .section-sub {
+      color: rgba(255,255,255,0.86);
+    }
+
+    .final-dark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .final-dark-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 30px;
+    }
+
+    .final-dark-card h3 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+      color: white;
+    }
+
+    .final-dark-card p {
+      color: rgba(255,255,255,0.86);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* CTA */
+    .closing-band {
+      padding: 86px 0;
+    }
+
+    .closing-box {
+      border-radius: 38px;
+      padding: 48px 42px;
+      background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 72%, #14b8a6 100%);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .closing-box h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .closing-box p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .site-footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 800;
+      color: #475467;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
+      .top-strength-grid,
+      .final-dark-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .long-strength-row {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        padding: 92px 0 72px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .story-banner,
+      .closing-box {
+        padding: 36px 28px;
+        border-radius: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,125 +501,92 @@
         <a href="./contact.html">문의하기</a>
       </nav>
 
-      <a href="./contact.html" class="btn btn-primary hover-btn">상담 신청</a>
+      <a href="./contact.html" class="btn btn-primary">상담 신청</a>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="page-hero-text reveal-up active">
-          <p class="eyebrow">STRENGTH</p>
-          <h1>보기 좋은 회사보다<br />맡겨도 안 터지는 실행사를 찾는다면</h1>
-          <p>
-            대행사와 중소기업이 실행사를 볼 때 결국 보는 건 비슷합니다.
-            응답이 빠른지, 일정이 지켜지는지, 말보다 실제 움직임이 있는지.
-            깐부파트너스는 그 기준으로 운영합니다.
-          </p>
-        </div>
+    <!-- hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="hero-badge">STRENGTH</span>
+        <h1>보기 좋은 말보다<br />맡기는 쪽 입장에서 신뢰가 남는 구조</h1>
+        <p>
+          깐부파트너스의 강점은 문장을 멋지게 만드는 데 있지 않습니다.
+          실제 맡기는 사람이 “여긴 일 맡겨도 안 꼬이겠다”라고 느끼는 구조에 있습니다.
+        </p>
       </div>
     </section>
 
+    <!-- 핵심 강점 -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">핵심 강점</p>
-          <h2>맡기는 쪽 입장에서 중요한 것만 남겼습니다</h2>
-          <p>
-            번지르르한 문장보다 실제로 맡길 때 불안하지 않은 구조가 중요합니다.
-            그래서 저희 강점은 “멋있어 보이는 말”이 아니라
-            실제 맡기는 사람이 중요하게 보는 기준으로 정리했습니다.
-          </p>
-        </div>
+        <span class="section-chip">핵심 강점</span>
+        <h2 class="section-title">맡기는 쪽 입장에서<br />중요한 것만 남겼습니다</h2>
+        <p class="section-sub">
+          번지르르한 문장보다 실제로 맡길 때 불안하지 않은 구조가 중요합니다.
+          그래서 저희 강점은 “멋있어 보이는 말”이 아니라, 실제 맡기는 사람이 중요하게 보는 기준으로 정리했습니다.
+        </p>
 
-        <div class="card-grid three">
-          <article class="info-card hover-card reveal-up">
+        <div class="top-strength-grid">
+          <article class="top-strength-card blue">
             <h3>빠른 응답</h3>
             <p>
               대행사 업무는 타이밍이 중요합니다.
-              문의와 피드백이 늦으면 결국 클라이언트 대응까지 꼬이기 때문에
-              응답 속도를 기본으로 봅니다.
+              문의와 피드백이 늦으면 결국 클라이언트 대응까지 꼬이기 때문에,
+              응답 속도를 기본으로 둡니다.
             </p>
           </article>
 
-          <article class="info-card hover-card reveal-up delay-1">
+          <article class="top-strength-card mint">
             <h3>실행 중심</h3>
             <p>
               설명만 길고 실제 움직임이 없는 구조를 지양합니다.
               필요한 작업을 먼저 정리하고,
-              결과 흐름이 보이게 움직이는 방식을 중요하게 생각합니다.
+              결과 흐름이 보이게 움직이는 방식을 더 중요하게 봅니다.
             </p>
           </article>
 
-          <article class="info-card hover-card reveal-up delay-2">
+          <article class="top-strength-card amber">
             <h3>대표 책임 운영</h3>
             <p>
               얼굴이 보이는 운영 구조라 가볍게 일하지 않습니다.
               온라인만이 아니라 오프라인 활동 이력까지 보이는 구조라
-              신뢰를 더 중요하게 봅니다.
+              신뢰를 더 중요하게 생각합니다.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
+    <!-- 배너 -->
+    <section class="section-soft section">
       <div class="container">
-        <div class="section-head center reveal-up">
-          <p class="section-label">왜 대행사가 맡기나</p>
-          <h2>대행사 입장에서 중요한 건<br />결국 “일이 안 꼬이는가” 입니다</h2>
+        <div class="story-banner">
+          <span class="section-chip">왜 맡기는가</span>
+          <h2>대행사와 중소기업이 원하는 건<br />결국 “일이 안 꼬이는 구조”입니다</h2>
           <p>
-            외주 파트너는 화려한 말보다
-            소통, 속도, 수정 반영, 일정 준수가 더 중요합니다.
-            대행사는 결국 자기 이름으로 나가야 하기 때문입니다.
+            디자인만 예쁜 사이트보다 더 중요한 건 일의 방식입니다.
+            응답이 빠르고, 요청 의도가 잘 읽히고, 필요한 만큼만 정확하게 작업되는 구조여야 다시 맡깁니다.
           </p>
         </div>
-
-        <div class="card-grid three">
-          <article class="info-card hover-card reveal-up">
-            <h3>응답이 빠른 파트너</h3>
-            <p>
-              클라이언트 요청이 들어왔을 때 연락이 닿고, 흐름이 바로 이어져야
-              대행사도 자신 있게 움직일 수 있습니다.
-            </p>
-          </article>
-
-          <article class="info-card hover-card reveal-up delay-1">
-            <h3>필요한 작업만 정확히</h3>
-            <p>
-              괜히 이것저것 묶어서 부풀리는 게 아니라
-              지금 상황에서 필요한 작업이 뭔지 먼저 보고 정리합니다.
-            </p>
-          </article>
-
-          <article class="info-card hover-card reveal-up delay-2">
-            <h3>수정과 반영이 되는 구조</h3>
-            <p>
-              처음 이야기한 방향과 실제 결과가 어긋나면
-              중간 수정과 피드백 반영이 빨라야 전체 프로젝트가 안 무너집니다.
-            </p>
-          </article>
-        </div>
       </div>
     </section>
 
+    <!-- 중소기업이 보는 기준 -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">왜 중소기업이 맡기나</p>
-          <h2>중소기업은 “멋진 마케팅”보다<br />“지금 우리한테 필요한 것”을 원합니다</h2>
-          <p>
-            대표들은 대단한 이론보다
-            “지금 뭐부터 해야 하냐”를 더 궁금해합니다.
-            그래서 저희는 상황을 먼저 보고,
-            필요한 순서를 정리하는 식으로 접근합니다.
-          </p>
-        </div>
+        <span class="section-chip">중소기업이 보는 기준</span>
+        <h2 class="section-title">중소기업은 “멋진 마케팅”보다<br />“지금 우리한테 필요한 것”을 원합니다</h2>
+        <p class="section-sub">
+          대표들은 대단한 이론보다 “지금 뭐부터 해야 하냐”를 더 궁금해합니다.
+          그래서 저희는 상황을 먼저 보고, 필요한 순서를 정리하는 구조로 접근합니다.
+        </p>
 
-        <div class="strength-list">
-          <div class="strength-row hover-card reveal-left">
-            <div class="strength-num">01</div>
-            <div class="strength-text">
+        <div class="long-strength-list">
+          <article class="long-strength-row">
+            <div class="long-strength-num">01</div>
+            <div class="long-strength-text">
               <h3>서비스를 많이 보이지 않습니다</h3>
               <p>
                 이것저것 다 한다고 말하면 커 보일 수는 있지만,
@@ -148,88 +594,105 @@
                 그래서 핵심 서비스에 집중합니다.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="strength-row hover-card reveal-right">
-            <div class="strength-num">02</div>
-            <div class="strength-text">
+          <article class="long-strength-row">
+            <div class="long-strength-num">02</div>
+            <div class="long-strength-text">
               <h3>업종과 상황을 먼저 봅니다</h3>
               <p>
                 맛집, 병원, 미용, 스토어, 브랜드 계정은
                 다 같은 방식으로 밀면 안 됩니다.
-                어느 지점이 막혀 있는지 먼저 보는 구조를 더 중요하게 생각합니다.
+                어느 지점이 막혀 있는지 먼저 보는 구조가 더 중요합니다.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="strength-row hover-card reveal-left">
-            <div class="strength-num">03</div>
-            <div class="strength-text">
+          <article class="long-strength-row">
+            <div class="long-strength-num">03</div>
+            <div class="long-strength-text">
               <h3>보고서보다 반응 흐름을 봅니다</h3>
               <p>
                 숫자만 보기 좋게 만드는 게 아니라
-                실제로 클릭, 관심, 저장, 리뷰 같은 흐름이 생기는지에 더 집중합니다.
+                실제 클릭, 관심, 저장, 리뷰 같은 흐름이 생기는지에 더 집중합니다.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="strength-row hover-card reveal-right">
-            <div class="strength-num">04</div>
-            <div class="strength-text">
+          <article class="long-strength-row">
+            <div class="long-strength-num">04</div>
+            <div class="long-strength-text">
               <h3>온라인과 오프라인 신뢰를 같이 봅니다</h3>
               <p>
                 원주 기반 활동, 원청협, 로타리 같은 지역 활동은
                 단순 이력이 아니라 “사람 보고 맡길 수 있는가”를 보여주는 요소라고 생각합니다.
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
+    <!-- 마지막 다크 섹션 -->
+    <section class="final-dark">
       <div class="container">
-        <div class="section-head center reveal-up">
-          <p class="section-label">결국 이런 회사입니다</p>
-          <h2>말보다 실행, 과정보다 결과 흐름</h2>
-          <p>
-            깐부파트너스는 화려하게 포장하는 회사보다
-            맡겼을 때 흐름이 살아나는 회사를 지향합니다.
-            그래서 구조도 단순하고, 설명도 길지 않고,
-            결국은 “움직였냐”를 더 중요하게 봅니다.
-          </p>
-        </div>
+        <span class="section-chip">결국 이런 회사입니다</span>
+        <h2 class="section-title">말보다 실행,<br />과정보다 결과 흐름</h2>
+        <p class="section-sub">
+          깐부파트너스는 화려하게 포장하는 회사보다,
+          맡겼을 때 흐름이 살아나는 회사를 지향합니다.
+          그래서 구조도 단순하고, 설명도 길지 않고, 결국은 “움직였냐”를 더 중요하게 봅니다.
+        </p>
 
-        <div class="card-grid three">
-          <article class="info-card hover-card reveal-up">
+        <div class="final-dark-grid">
+          <article class="final-dark-card">
             <h3>로컬 기반 신뢰</h3>
-            <p>원주에서 실제 활동하고 얼굴을 내밀며 운영하는 구조 자체가 신뢰의 출발점이라고 봅니다.</p>
+            <p>
+              원주에서 실제 활동하고 얼굴을 내밀며 운영하는 구조 자체가
+              신뢰의 출발점이라고 생각합니다.
+            </p>
           </article>
 
-          <article class="info-card hover-card reveal-up delay-1">
+          <article class="final-dark-card">
             <h3>작업 중심 운영</h3>
-            <p>예쁘게 말하는 것보다 필요한 작업을 정리해서 바로 들어가는 운영 방식을 더 중요하게 생각합니다.</p>
+            <p>
+              예쁘게 말하는 것보다 필요한 작업을 정리해서
+              바로 들어가는 운영 방식을 더 중요하게 봅니다.
+            </p>
           </article>
 
-          <article class="info-card hover-card reveal-up delay-2">
+          <article class="final-dark-card">
+            <h3>업종 이해</h3>
+            <p>
+              매장형 업종, 로컬 업종, 스토어 업종의 차이를 감안해
+              같은 방식으로 밀어붙이지 않습니다.
+            </p>
+          </article>
+
+          <article class="final-dark-card">
             <h3>장기적으로 맡길 수 있는 구조</h3>
-            <p>한 번 반짝이 아니라, 계속 맡겨도 불안하지 않은 관계를 만드는 방향으로 운영합니다.</p>
+            <p>
+              한 번 반짝이 아니라,
+              계속 맡겨도 불안하지 않은 관계를 만드는 방향으로 운영합니다.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section cta-section">
+    <!-- CTA -->
+    <section class="closing-band">
       <div class="container">
-        <div class="cta-box reveal-up active">
-          <div>
-            <p class="section-label">CONTACT</p>
-            <h2>겉만 번지르르한 곳 말고<br />실제로 움직이는 파트너를 찾는다면</h2>
-            <p>대행사 외주 파트너, 중소기업 실행 마케팅, 지역 기반 신뢰형 운영까지. 지금 바로 문의해보세요.</p>
-          </div>
+        <div class="closing-box">
+          <h2>겉만 번지르르한 곳 말고<br />실제로 움직이는 파트너를 찾는다면</h2>
+          <p>
+            대행사 외주 파트너, 중소기업 실행 마케팅, 지역 기반 신뢰형 운영까지.
+            지금 필요한 기준부터 같이 정리해드립니다.
+          </p>
+
           <div class="button-row">
-            <a href="./contact.html" class="btn btn-primary hover-btn">문의하기</a>
-            <a href="./services.html" class="btn btn-outline hover-btn">서비스 보기</a>
+            <a href="./contact.html" class="btn btn-primary">문의하기</a>
+            <a href="./services.html" class="btn btn-outline" style="background:rgba(255,255,255,0.10); color:#fff; border-color:rgba(255,255,255,0.24);">서비스 보기</a>
           </div>
         </div>
       </div>
@@ -240,7 +703,7 @@
     <div class="container footer-inner">
       <div>
         <a href="./index.html" class="logo">깐부<span>파트너스</span></a>
-        <p>트래픽·리뷰 전문 마케팅 실행사</p>
+        <p style="color:#475467; font-size:14px; margin-top:8px;">트래픽·리뷰 전문 마케팅 실행사</p>
       </div>
 
       <div class="footer-links">
@@ -252,8 +715,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="./js/main.js"></script>
-  <script src="./js/animation.js"></script>
 </body>
 </html>
