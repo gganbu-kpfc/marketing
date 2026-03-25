@@ -5,18 +5,33 @@
 }
 
 :root {
-  --navy: #0c1d3a;
-  --navy-2: #13284d;
-  --blue: #1f6fff;
-  --blue-dark: #1457d6;
-  --sky: #eef4ff;
-  --sky-2: #f7fbff;
-  --soft: #f8fafc;
-  --line: #e5e7eb;
-  --line-2: #d7deea;
+  --navy: #0C1D3A;
+  --navy-2: #13284D;
+  --blue: #1F6FFF;
+  --blue-dark: #1457D6;
+
+  /* 포인트 컬러 추가 */
+  --mint: #14B8A6;
+  --amber: #F59E0B;
+
+  --sky: #EEF4FF;
+  --sky-2: #F7FBFF;
+  --soft: #F8FAFC;
+
+  /* 포인트용 배경 */
+  --bg-mint: #ECFDF5;
+  --bg-amber: #FFFBEB;
+
+  --line: #E5E7EB;
+  --line-2: #D7DEEA;
+
   --text: #111827;
-  --sub: #667085;
-  --white: #ffffff;
+
+  /* 본문 가독성 강화 */
+  --sub: #344054;
+  --sub-2: #475467;
+
+  --white: #FFFFFF;
 
   --shadow-xs: 0 6px 18px rgba(12, 29, 58, 0.04);
   --shadow-sm: 0 10px 24px rgba(12, 29, 58, 0.06);
