@@ -1,57 +1,68 @@
-/* 기본값: JS 안 돌아도 내용은 보이게 */
 .reveal-up,
 .reveal-left,
-.reveal-right {
+.reveal-right,
+.fade-in,
+.zoom-in {
   opacity: 1;
   transform: none;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s cubic-bezier(.2,.65,.2,1),
+    transform 0.8s cubic-bezier(.2,.65,.2,1),
+    box-shadow .25s ease,
+    border-color .25s ease;
   will-change: opacity, transform;
 }
 
-/* JS가 켜진 상태에서만 처음 숨김 */
 .js .reveal-up,
 .js .reveal-left,
-.js .reveal-right {
+.js .reveal-right,
+.js .fade-in,
+.js .zoom-in {
   opacity: 0;
 }
 
-.js .reveal-up {
-  transform: translateY(28px);
-}
-
-.js .reveal-left {
-  transform: translateX(-28px);
-}
-
-.js .reveal-right {
-  transform: translateX(28px);
-}
+.js .reveal-up { transform: translateY(28px); }
+.js .reveal-left { transform: translateX(-28px); }
+.js .reveal-right { transform: translateX(28px); }
+.js .fade-in { transform: none; }
+.js .zoom-in { transform: scale(0.96); }
 
 .js .reveal-up.active,
 .js .reveal-left.active,
-.js .reveal-right.active {
+.js .reveal-right.active,
+.js .fade-in.active,
+.js .zoom-in.active {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(0, 0) scale(1);
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
 
 .hover-card {
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
 }
 
 .hover-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(12, 29, 58, 0.12);
+  box-shadow: 0 24px 48px rgba(12,29,58,0.12);
+  border-color: rgba(31,111,255,0.12);
 }
 
 .hover-btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
 }
 
 .hover-btn:hover {
   transform: translateY(-2px);
+  filter: brightness(1.02);
 }
 
 .hover-image {
@@ -59,7 +70,7 @@
 }
 
 .hover-image img {
-  transition: transform 0.45s ease;
+  transition: transform .5s ease;
 }
 
 .hover-image:hover img {
