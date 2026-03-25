@@ -4,255 +4,412 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>서비스 | 깐부파트너스</title>
-  <meta name="description" content="네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 깐부파트너스의 핵심 서비스 소개" />
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/animation.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="./index.html" class="logo">깐부<span>파트너스</span></a>
+  <meta name="description" content="네이버 플레이스, 쇼핑 스토어, 셀프 마케팅까지. 실행 중심 마케팅 서비스 소개" />
+  <style>
+    :root {
+      --navy: #0c1d3a;
+      --navy-2: #12284d;
+      --blue: #1f6fff;
+      --blue-dark: #1457d6;
+      --green: #03c75a;
+      --green-dark: #00a14b;
+      --sky: #f4f8ff;
+      --soft: #f7f8fa;
+      --line: #e7edf5;
+      --text: #111827;
+      --sub: #475467;
+      --white: #ffffff;
+      --shadow-sm: 0 12px 30px rgba(12, 29, 58, 0.06);
+      --shadow-md: 0 22px 54px rgba(12, 29, 58, 0.12);
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 34px;
+      --max: 1220px;
+    }
 
-      <nav class="nav">
-        <a href="./about.html">회사소개</a>
-        <a href="./services.html" class="active">서비스</a>
-        <a href="./strength.html">강점</a>
-        <a href="./portfolio.html">포트폴리오</a>
-        <a href="./contact.html">문의하기</a>
-      </nav>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <a href="./contact.html" class="btn btn-primary hover-btn">상담 신청</a>
-    </div>
-  </header>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <main>
-    <section class="page-hero service-hero">
-      <div class="container">
-        <div class="page-hero-text reveal-up active">
-          <p class="eyebrow">SERVICES</p>
-          <h1>트래픽과 리뷰 중심으로<br />실행되는 3가지 핵심 서비스</h1>
-          <p>
-            이것저것 다 하는 척하지 않습니다.
-            네이버 플레이스, 쇼핑 스토어, 셀프 마케팅.
-            실제로 문의와 반응 흐름에 영향을 주는 3가지에 집중합니다.
-          </p>
-        </div>
-      </div>
-    </section>
+    body {
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">SERVICE 01</p>
-          <h2>네이버 플레이스</h2>
-          <p>
-            지도에서 보이기만 하는 매장이 아니라,
-            실제 클릭과 저장, 리뷰 신뢰까지 이어지는 흐름을 만드는 작업입니다.
-          </p>
-        </div>
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-        <div class="service-detail-grid">
-          <div class="service-visual hover-image reveal-left">
-            <img src="./assets/service-place.jpg" alt="네이버 플레이스 서비스 이미지" />
-          </div>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-          <div class="service-detail-content reveal-right">
-            <p class="service-lead">플레이스는 노출만이 아니라, 믿게 만드는 흐름까지 같이 가야 합니다.</p>
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-            <div class="feature-list">
-              <div class="feature-item hover-card">
-                <h3>플레이스 트래픽 운영</h3>
-                <p>검색 후 지도 유입, 클릭, 저장 흐름을 보강하는 방향으로 작업합니다.</p>
-              </div>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(231,237,245,0.9);
+    }
 
-              <div class="feature-item hover-card">
-                <h3>리뷰 흐름 관리</h3>
-                <p>매장을 보고도 망설이는 구간에서 리뷰 신뢰가 붙도록 흐름을 정리합니다.</p>
-              </div>
+    .header-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-              <div class="feature-item hover-card">
-                <h3>업종별 방향 제안</h3>
-                <p>맛집, 병원, 미용, 로컬 업종 등 업종별로 보는 포인트가 다르기 때문에 방향도 다르게 잡습니다.</p>
-              </div>
-            </div>
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
 
-            <div class="service-tags">
-              <span>맛집</span>
-              <span>병원</span>
-              <span>미용</span>
-              <span>로컬매장</span>
-              <span>플레이스유입</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    .logo span {
+      color: var(--blue);
+    }
 
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">SERVICE 02</p>
-          <h2>쇼핑 스토어</h2>
-          <p>
-            상품은 괜찮은데 관심과 찜이 약해서 묻히는 경우가 많습니다.
-            검색만 되고 끝나는 상태가 아니라, 반응이 이어지는 구조를 만듭니다.
-          </p>
-        </div>
+    .nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        <div class="service-detail-grid reverse">
-          <div class="service-detail-content reveal-left">
-            <p class="service-lead">스토어는 상품 수보다 먼저, 시작 반응이 붙는 구조가 필요합니다.</p>
+    .nav a {
+      position: relative;
+      font-size: 15px;
+      font-weight: 800;
+      color: #334155;
+    }
 
-            <div class="feature-list">
-              <div class="feature-item hover-card">
-                <h3>스토어 트래픽 보강</h3>
-                <p>검색 유입 이후 상품 페이지 반응이 이어질 수 있도록 흐름을 보조합니다.</p>
-              </div>
+    .nav a.active,
+    .nav a:hover {
+      color: var(--blue);
+    }
 
-              <div class="feature-item hover-card">
-                <h3>찜/관심 신호 형성</h3>
-                <p>상품은 보는데 반응이 없는 상태에서 필요한 시작 신호를 만드는 작업입니다.</p>
-              </div>
+    .nav a.active::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--blue);
+    }
 
-              <div class="feature-item hover-card">
-                <h3>반응 약한 상품 보강</h3>
-                <p>좋은 상품인데도 묻히는 경우, 초기 관심 흐름을 보강하는 방향으로 접근합니다.</p>
-              </div>
-            </div>
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-            <div class="service-tags">
-              <span>스마트스토어</span>
-              <span>상품반응</span>
-              <span>찜</span>
-              <span>관심신호</span>
-              <span>스토어유입</span>
-            </div>
-          </div>
+    .btn {
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
 
-          <div class="service-visual hover-image reveal-right">
-            <img src="./assets/service-store.jpg" alt="쇼핑 스토어 서비스 이미지" />
-          </div>
-        </div>
-      </div>
-    </section>
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <p class="section-label">SERVICE 03</p>
-          <h2>셀프 마케팅</h2>
-          <p>
-            인스타그램, 유튜브, 스토어 등에서
-            대표가 직접 필요한 반응을 선택해서 운영할 수 있는 도구형 서비스입니다.
-          </p>
-        </div>
+    .btn-outline {
+      border: 1px solid #cfe0ff;
+      color: var(--blue);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
 
-        <div class="service-detail-grid">
-          <div class="service-visual hover-image reveal-left">
-            <img src="./assets/service-self.jpg" alt="셀프 마케팅 서비스 이미지" />
-          </div>
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(31,111,255,0.24);
+    }
 
-          <div class="service-detail-content reveal-right">
-            <p class="service-lead">콘텐츠가 안 먹히는 게 아니라, 처음 반응이 너무 약한 경우가 많습니다.</p>
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(31,111,255,0.12), transparent 22%),
+        radial-gradient(circle at 15% 10%, rgba(3,199,90,0.08), transparent 18%),
+        linear-gradient(180deg, #f9fbff 0%, #edf4ff 100%);
+      padding: 96px 0 72px;
+      border-bottom: 1px solid rgba(31,111,255,0.08);
+    }
 
-            <div class="feature-list">
-              <div class="feature-item hover-card">
-                <h3>인스타그램 반응</h3>
-                <p>좋아요, 팔로워, 조회 등 필요한 반응을 직접 선택해서 운영할 수 있습니다.</p>
-              </div>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: center;
+    }
 
-              <div class="feature-item hover-card">
-                <h3>유튜브 반응</h3>
-                <p>조회수, 좋아요, 구독 반응을 보조하는 형태로 시작점을 만들 수 있습니다.</p>
-              </div>
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      box-shadow: 0 10px 24px rgba(31,111,255,0.18);
+      margin-bottom: 20px;
+    }
 
-              <div class="feature-item hover-card">
-                <h3>스토어 찜 신호</h3>
-                <p>찜과 관심 흐름이 약한 상품에 필요한 보조 신호를 직접 선택해서 활용할 수 있습니다.</p>
-              </div>
-            </div>
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.07em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
 
-            <div class="service-tags">
-              <span>인스타그램</span>
-              <span>유튜브</span>
-              <span>조회수</span>
-              <span>좋아요</span>
-              <span>팔로워</span>
-              <span>찜</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    .hero h1 .accent {
+      color: var(--blue);
+    }
 
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-head center reveal-up active">
-          <p class="section-label">왜 3개만 하냐</p>
-          <h2>많이 하는 척보다<br />정확하게 움직이는 구조가 중요합니다</h2>
-          <p>
-            서비스가 많아 보이면 커 보일 수는 있습니다.
-            그런데 실제로 맡기는 사람 입장에서는
-            “뭘 잘하는지 모르겠다”는 반감이 더 먼저 생깁니다.
-            그래서 저희는 실제 반응에 가까운 3가지에 집중합니다.
-          </p>
-        </div>
+    .hero p {
+      font-size: 19px;
+      color: var(--sub);
+      max-width: 760px;
+    }
 
-        <div class="card-grid three">
-          <article class="info-card hover-card reveal-up">
-            <h3>플레이스는 방문 흐름</h3>
-            <p>지역 매장과 로컬 업종은 결국 지도와 리뷰에서 신뢰가 붙어야 합니다.</p>
-          </article>
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
-          <article class="info-card hover-card reveal-up delay-1">
-            <h3>스토어는 관심 흐름</h3>
-            <p>좋은 상품이어도 관심 신호가 약하면 검색만 되고 끝나는 경우가 많습니다.</p>
-          </article>
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
 
-          <article class="info-card hover-card reveal-up delay-2">
-            <h3>셀프는 시작 반응</h3>
-            <p>대표가 직접 필요한 숫자를 선택해 운영할 수 있어 테스트와 초기 보강에 좋습니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(31,111,255,0.12);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+    }
 
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta-box reveal-up active">
-          <div>
-            <p class="section-label">CONTACT</p>
-            <h2>우리 업종은 어떤 서비스가 먼저 필요한지<br />확인해보세요</h2>
-            <p>플레이스, 스토어, 셀프 마케팅 중 무엇부터 들어가야 할지 먼저 정리해드립니다.</p>
-          </div>
-          <div class="button-row">
-            <a href="./contact.html" class="btn btn-primary hover-btn">문의하기</a>
-            <a href="./portfolio.html" class="btn btn-outline hover-btn">사례 보기</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    .hero-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(231,237,245,0.9);
+    }
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <a href="./index.html" class="logo">깐부<span>파트너스</span></a>
-        <p>트래픽·리뷰 전문 마케팅 실행사</p>
-      </div>
+    .hero-card-top {
+      padding: 30px 30px 26px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
 
-      <div class="footer-links">
-        <a href="./about.html">회사소개</a>
-        <a href="./services.html">서비스</a>
-        <a href="./strength.html">강점</a>
-        <a href="./portfolio.html">포트폴리오</a>
-        <a href="./contact.html">문의하기</a>
-      </div>
-    </div>
-  </footer>
+    .hero-card-top h3 {
+      font-size: 34px;
+      line-height: 1.14;
+      letter-spacing: -0.05em;
+      margin-bottom: 10px;
+    }
 
-  <script src="./js/main.js"></script>
-  <script src="./js/animation.js"></script>
-</body>
-</html>
+    .hero-card-top p {
+      color: rgba(255,255,255,0.82);
+      font-size: 15px;
+    }
+
+    .hero-card-body {
+      padding: 24px;
+      background: #fff;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .hero-point-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #eef4ff;
+      color: var(--blue);
+      font-weight: 900;
+      flex: none;
+    }
+
+    .hero-point b {
+      display: block;
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .hero-point span {
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 94px 0;
+    }
+
+  .service-band {
+  border-radius: 40px;
+  padding: 70px 60px;
+  margin-bottom: 80px;
+  box-shadow: 0 30px 70px rgba(12,29,58,0.08);
+}
+
+/* ===================== */
+/* 1. 네이버 플레이스 */
+/* ===================== */
+
+.service-band.naver {
+  background: linear-gradient(135deg, #03C75A 0%, #02b351 100%);
+  color: white;
+}
+
+.service-band.naver h2,
+.service-band.naver p {
+  color: white;
+}
+
+.service-band.naver .service-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ===================== */
+/* 2. 쇼핑 스토어 */
+/* ===================== */
+
+.service-band.shopping {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.service-band.shopping .service-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===================== */
+/* 3. 셀프 마케팅 */
+/* ===================== */
+
+.service-band.self {
+  background: linear-gradient(135deg, #0c1d3a 0%, #1f6fff 100%);
+  color: white;
+}
+
+.service-band.self h2,
+.service-band.self p {
+  color: white;
+}
+
+.service-band.self .service-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ===================== */
+/* 공통 카드 */
+/* ===================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.service-card {
+  padding: 26px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(12,29,58,0.12);
+}
+
+/* ===================== */
+/* 아이콘 */
+/* ===================== */
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+}
+
+/* ===================== */
+/* 반응형 */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-band {
+    padding: 50px 28px;
+  }
+}
