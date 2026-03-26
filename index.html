@@ -1220,19 +1220,22 @@
       }
     }
 
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('scroll', updateHeader);
-    window.addEventListener('load', revealOnScroll);
-    window.addEventListener('load', updateHeader);
-  </script>
-  <script>
+<script>
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('scroll', updateHeader);
+  window.addEventListener('load', revealOnScroll);
+  window.addEventListener('load', updateHeader);
+</script>
+
+<script>
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.querySelector('.nav-links');
 
-  mobileMenuBtn.addEventListener('click', function () {
-    navLinks.classList.toggle('show');
-  });
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
+    });
+  }
 </script>
-</body>
 </body>
 </html>
