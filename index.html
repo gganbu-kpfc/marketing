@@ -68,28 +68,64 @@
     }
 
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(231,237,245,0.9);
-      transition: box-shadow .2s ease, background .2s ease;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(231,237,245,0.9);
+  transition: box-shadow .2s ease, background .2s ease;
+}
 
-    .site-header.scrolled {
-      box-shadow: 0 8px 28px rgba(12,29,58,0.08);
-      background: rgba(255,255,255,0.95);
-    }
+.site-header.scrolled {
+  box-shadow: 0 8px 28px rgba(12,29,58,0.08);
+  background: rgba(255,255,255,0.95);
+}
 
-    .header-inner {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.header-inner {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
+/* 여기부터 새로 추가 */
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 84px;
+    left: 16px;
+    right: 16px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    flex-direction: column;
+    gap: 14px;
+    z-index: 999;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+}
+    
     .logo {
       font-size: 24px;
       font-weight: 900;
@@ -873,8 +909,13 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="https://gganbu-kpfc.github.io/marketing/index.html" class="logo">깐부<span>파트너스</span></a>
-
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="모바일 메뉴 열기">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
       <nav class="nav-links">
+        
         <a href="https://gganbu-kpfc.github.io/marketing/about.html">회사소개</a>
         <a href="https://gganbu-kpfc.github.io/marketing/services.html">서비스</a>
         <a href="https://gganbu-kpfc.github.io/marketing/strength.html">강점</a>
