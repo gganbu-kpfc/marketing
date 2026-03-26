@@ -100,51 +100,115 @@ img {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 900;
-  letter-spacing: -0.05em;
-  color: var(--navy);
+  color: #0f172a;
+  text-decoration: none;
   white-space: nowrap;
 }
 
 .logo span {
-  color: var(--blue);
+  color: #2563eb;
 }
 
-.nav {
+.nav-links {
   display: flex;
-  gap: 28px;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 28px;
 }
 
-.nav a {
+.nav-links a {
   position: relative;
-  font-weight: 800;
-  color: #334155;
-  transition: color .22s ease;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -9px;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue), #69a0ff);
+.nav-links a:hover,
+.nav-links a.active {
+  color: #2563eb;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: #111827;
   border-radius: 999px;
-  transition: width .22s ease;
 }
 
-.nav a.active,
-.nav a:hover {
-  color: var(--blue);
-}
+/* 모바일 */
+@media (max-width: 991px) {
+  .header-inner {
+    min-height: 72px;
+    position: relative;
+    flex-wrap: nowrap;
+  }
 
-.nav a.active::after,
-.nav a:hover::after {
-  width: 100%;
+  .logo {
+    font-size: 28px;
+    flex: 1;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 16px;
+    right: 16px;
+    background: #ffffff;
+    border: 1px solid rgba(231,237,245,0.95);
+    border-radius: 18px;
+    padding: 18px 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .header-actions {
+    display: none;
+  }
 }
 
 /* Buttons */
